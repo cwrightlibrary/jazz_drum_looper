@@ -1,0 +1,1686 @@
+/////////////////////////////////////////////////////////////////////////////
+//// SFZ Definition File
+////-----------------------
+
+<region>
+sample=samples\Jazz Kit101_b0.wav
+key=35 lovel=0 hivel=101
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit101_c1.wav
+key=36 lovel=0 hivel=101
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit101_c#1.wav
+key=37 lovel=0 hivel=101
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit101_d1.wav
+key=38 lovel=0 hivel=101
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit101_d#1.wav
+key=39 lovel=0 hivel=101
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit101_e1.wav
+key=40 lovel=0 hivel=101
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit101_f1.wav
+key=41 lovel=0 hivel=101
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit101_f#1.wav
+key=42 lovel=0 hivel=101
+loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit101_g1.wav
+key=43 lovel=0 hivel=101
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit101_g#1.wav
+key=44 lovel=0 hivel=101
+loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit101_a1.wav
+key=45 lovel=0 hivel=101
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit103_a#1.wav
+key=46 lovel=102 hivel=103
+loop_mode=no_loop
+volume=-3.77953
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit103_b1.wav
+key=47 lovel=102 hivel=103
+offset=190 loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit103_c2.wav
+key=48 lovel=102 hivel=103
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit103_c#2.wav
+key=49 lovel=102 hivel=103
+offset=6511 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit103_d2.wav
+key=50 lovel=102 hivel=103
+offset=169 loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit103_d#2.wav
+key=51 lovel=102 hivel=103
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit103_e2.wav
+key=52 lovel=102 hivel=103
+offset=5544 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit103_f2.wav
+key=53 lovel=102 hivel=103
+offset=4650 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit103_f#2.wav
+key=54 lovel=102 hivel=103
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit103_g2.wav
+key=55 lovel=102 hivel=103
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit103_g#2.wav
+key=56 lovel=102 hivel=103
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit103_a2.wav
+key=57 lovel=102 hivel=103
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit103_a#2.wav
+key=58 lovel=102 hivel=103
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit103_b2.wav
+key=59 lovel=102 hivel=103
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit103_b0.wav
+key=35 lovel=102 hivel=103
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit103_c1.wav
+key=36 lovel=102 hivel=103
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit103_c#1.wav
+key=37 lovel=102 hivel=103
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit103_d1.wav
+key=38 lovel=102 hivel=103
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit103_d#1.wav
+key=39 lovel=102 hivel=103
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit103_e1.wav
+key=40 lovel=102 hivel=103
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit103_f1.wav
+key=41 lovel=102 hivel=103
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit103_f#1.wav
+key=42 lovel=102 hivel=103
+offset=230 loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit103_g1.wav
+key=43 lovel=102 hivel=103
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit103_g#1.wav
+key=44 lovel=102 hivel=103
+loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit103_a1.wav
+key=45 lovel=102 hivel=103
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit101_a#1.wav
+key=46 lovel=0 hivel=101
+loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit101_b1.wav
+key=47 lovel=0 hivel=101
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit101_c2.wav
+key=48 lovel=0 hivel=101
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit101_c#2.wav
+key=49 lovel=0 hivel=101
+offset=6128 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit101_d2.wav
+key=50 lovel=0 hivel=101
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit101_d#2.wav
+key=51 lovel=0 hivel=101
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit101_e2.wav
+key=52 lovel=0 hivel=101
+offset=5418 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit101_f2.wav
+key=53 lovel=0 hivel=101
+offset=4961 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit101_f#2.wav
+key=54 lovel=0 hivel=101
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit101_g2.wav
+key=55 lovel=0 hivel=101
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit101_g#2.wav
+key=56 lovel=0 hivel=101
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit101_a2.wav
+key=57 lovel=0 hivel=101
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit101_a#2.wav
+key=58 lovel=0 hivel=101
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit101_b2.wav
+key=59 lovel=0 hivel=101
+offset=4160 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit106_b0.wav
+key=35 lovel=104 hivel=106
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit106_c1.wav
+key=36 lovel=104 hivel=106
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit106_c#1.wav
+key=37 lovel=104 hivel=106
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit106_d1.wav
+key=38 lovel=104 hivel=106
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit106_d#1.wav
+key=39 lovel=104 hivel=106
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit106_e1.wav
+key=40 lovel=104 hivel=106
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit106_f1.wav
+key=41 lovel=104 hivel=106
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit106_f#1.wav
+key=42 lovel=104 hivel=106
+loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit106_g1.wav
+key=43 lovel=104 hivel=106
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit106_g#1.wav
+key=44 lovel=104 hivel=106
+loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit106_a1.wav
+key=45 lovel=104 hivel=106
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit106_a#1.wav
+key=46 lovel=104 hivel=106
+loop_mode=no_loop
+volume=-3.77953
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit106_b1.wav
+key=47 lovel=104 hivel=106
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit106_c2.wav
+key=48 lovel=104 hivel=106
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit106_c#2.wav
+key=49 lovel=104 hivel=106
+offset=6118 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit106_d2.wav
+key=50 lovel=104 hivel=106
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit106_d#2.wav
+key=51 lovel=104 hivel=106
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit106_e2.wav
+key=52 lovel=104 hivel=106
+offset=5236 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit106_f2.wav
+key=53 lovel=104 hivel=106
+offset=4650 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit106_f#2.wav
+key=54 lovel=104 hivel=106
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit106_g2.wav
+key=55 lovel=104 hivel=106
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit106_g#2.wav
+key=56 lovel=104 hivel=106
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit106_a2.wav
+key=57 lovel=104 hivel=106
+offset=1665 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit106_a#2.wav
+key=58 lovel=104 hivel=106
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit106_b2.wav
+key=59 lovel=104 hivel=106
+offset=1615 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit109_b0.wav
+key=35 lovel=107 hivel=109
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit109_c1.wav
+key=36 lovel=107 hivel=109
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit109_c#1.wav
+key=37 lovel=107 hivel=109
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit109_d1.wav
+key=38 lovel=107 hivel=109
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit109_d#1.wav
+key=39 lovel=107 hivel=109
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit109_e1.wav
+key=40 lovel=107 hivel=109
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit109_f1.wav
+key=41 lovel=107 hivel=109
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit109_f#1.wav
+key=42 lovel=107 hivel=109
+offset=121 loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit109_g1.wav
+key=43 lovel=107 hivel=109
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit109_g#1.wav
+key=44 lovel=107 hivel=109
+loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit109_a1.wav
+key=45 lovel=107 hivel=109
+offset=189 loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit109_a#1.wav
+key=46 lovel=107 hivel=109
+loop_mode=no_loop
+volume=-3.77953
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit109_b1.wav
+key=47 lovel=107 hivel=109
+offset=190 loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit109_c2.wav
+key=48 lovel=107 hivel=109
+offset=169 loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit109_c#2.wav
+key=49 lovel=107 hivel=109
+offset=5456 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit109_d2.wav
+key=50 lovel=107 hivel=109
+offset=169 loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit109_d#2.wav
+key=51 lovel=107 hivel=109
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit109_e2.wav
+key=52 lovel=107 hivel=109
+offset=5236 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit109_f2.wav
+key=53 lovel=107 hivel=109
+offset=4920 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit109_f#2.wav
+key=54 lovel=107 hivel=109
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit109_g2.wav
+key=55 lovel=107 hivel=109
+offset=3791 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit109_g#2.wav
+key=56 lovel=107 hivel=109
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit109_a2.wav
+key=57 lovel=107 hivel=109
+offset=6534 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit109_a#2.wav
+key=58 lovel=107 hivel=109
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit109_b2.wav
+key=59 lovel=107 hivel=109
+offset=3586 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit112_b0.wav
+key=35 lovel=110 hivel=112
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit112_c1.wav
+key=36 lovel=110 hivel=112
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit112_c#1.wav
+key=37 lovel=110 hivel=112
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit112_d1.wav
+key=38 lovel=110 hivel=112
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit112_d#1.wav
+key=39 lovel=110 hivel=112
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit112_e1.wav
+key=40 lovel=110 hivel=112
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit112_f1.wav
+key=41 lovel=110 hivel=112
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit112_f#1.wav
+key=42 lovel=110 hivel=112
+loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit112_g1.wav
+key=43 lovel=110 hivel=112
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit112_g#1.wav
+key=44 lovel=110 hivel=112
+loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit112_a1.wav
+key=45 lovel=110 hivel=112
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit112_a#1.wav
+key=46 lovel=110 hivel=112
+loop_mode=no_loop
+volume=-3.77953
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit112_b1.wav
+key=47 lovel=110 hivel=112
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit112_c2.wav
+key=48 lovel=110 hivel=112
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit112_c#2.wav
+key=49 lovel=110 hivel=112
+offset=4068 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit112_d2.wav
+key=50 lovel=110 hivel=112
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit112_d#2.wav
+key=51 lovel=110 hivel=112
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit112_e2.wav
+key=52 lovel=110 hivel=112
+offset=5544 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit112_f2.wav
+key=53 lovel=110 hivel=112
+offset=5060 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit112_f#2.wav
+key=54 lovel=110 hivel=112
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit112_g2.wav
+key=55 lovel=110 hivel=112
+offset=3568 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit112_g#2.wav
+key=56 lovel=110 hivel=112
+offset=149 loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit112_a2.wav
+key=57 lovel=110 hivel=112
+offset=6273 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit112_a#2.wav
+key=58 lovel=110 hivel=112
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit112_b2.wav
+key=59 lovel=110 hivel=112
+offset=3330 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit114_b0.wav
+key=35 lovel=113 hivel=114
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit114_c1.wav
+key=36 lovel=113 hivel=114
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit114_c#1.wav
+key=37 lovel=113 hivel=114
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit114_d1.wav
+key=38 lovel=113 hivel=114
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit114_d#1.wav
+key=39 lovel=113 hivel=114
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit114_e1.wav
+key=40 lovel=113 hivel=114
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit114_f1.wav
+key=41 lovel=113 hivel=114
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit114_f#1.wav
+key=42 lovel=113 hivel=114
+loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit114_g1.wav
+key=43 lovel=113 hivel=114
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit114_g#1.wav
+key=44 lovel=113 hivel=114
+loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit114_a1.wav
+key=45 lovel=113 hivel=114
+offset=552 loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit114_a#1.wav
+key=46 lovel=113 hivel=114
+loop_mode=no_loop
+volume=-3.77953
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit114_b1.wav
+key=47 lovel=113 hivel=114
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit114_c2.wav
+key=48 lovel=113 hivel=114
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit114_c#2.wav
+key=49 lovel=113 hivel=114
+offset=4080 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit114_d2.wav
+key=50 lovel=113 hivel=114
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit114_d#2.wav
+key=51 lovel=113 hivel=114
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit114_e2.wav
+key=52 lovel=113 hivel=114
+offset=5236 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit114_f2.wav
+key=53 lovel=113 hivel=114
+offset=5060 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit114_f#2.wav
+key=54 lovel=113 hivel=114
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit114_g2.wav
+key=55 lovel=113 hivel=114
+offset=4256 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit114_g#2.wav
+key=56 lovel=113 hivel=114
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit114_a2.wav
+key=57 lovel=113 hivel=114
+offset=6511 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit114_a#2.wav
+key=58 lovel=113 hivel=114
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit114_b2.wav
+key=59 lovel=113 hivel=114
+offset=4524 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit117_b0.wav
+key=35 lovel=115 hivel=117
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit117_c1.wav
+key=36 lovel=115 hivel=117
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit117_c#1.wav
+key=37 lovel=115 hivel=117
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit117_d1.wav
+key=38 lovel=115 hivel=117
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit117_d#1.wav
+key=39 lovel=115 hivel=117
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit117_e1.wav
+key=40 lovel=115 hivel=117
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit117_f1.wav
+key=41 lovel=115 hivel=117
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit117_f#1.wav
+key=42 lovel=115 hivel=117
+loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit117_g1.wav
+key=43 lovel=115 hivel=117
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit117_g#1.wav
+key=44 lovel=115 hivel=117
+loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit117_a1.wav
+key=45 lovel=115 hivel=117
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit117_a#1.wav
+key=46 lovel=115 hivel=117
+loop_mode=no_loop
+volume=-3.77953
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit117_b1.wav
+key=47 lovel=115 hivel=117
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit117_c2.wav
+key=48 lovel=115 hivel=117
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit117_c#2.wav
+key=49 lovel=115 hivel=117
+offset=4498 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit117_d2.wav
+key=50 lovel=115 hivel=117
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit117_d#2.wav
+key=51 lovel=115 hivel=117
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit117_e2.wav
+key=52 lovel=115 hivel=117
+offset=5340 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit117_f2.wav
+key=53 lovel=115 hivel=117
+offset=4734 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit117_f#2.wav
+key=54 lovel=115 hivel=117
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit117_g2.wav
+key=55 lovel=115 hivel=117
+offset=4704 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit117_g#2.wav
+key=56 lovel=115 hivel=117
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit117_a2.wav
+key=57 lovel=115 hivel=117
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit117_a#2.wav
+key=58 lovel=115 hivel=117
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit117_b2.wav
+key=59 lovel=115 hivel=117
+offset=4872 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit119_b0.wav
+key=35 lovel=118 hivel=119
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit119_c1.wav
+key=36 lovel=118 hivel=119
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit119_c#1.wav
+key=37 lovel=118 hivel=119
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit119_d1.wav
+key=38 lovel=118 hivel=119
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit119_d#1.wav
+key=39 lovel=118 hivel=119
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit119_e1.wav
+key=40 lovel=118 hivel=119
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit119_f1.wav
+key=41 lovel=118 hivel=119
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit119_f#1.wav
+key=42 lovel=118 hivel=119
+offset=121 loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit119_g1.wav
+key=43 lovel=118 hivel=119
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit119_g#1.wav
+key=44 lovel=118 hivel=119
+loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit119_a1.wav
+key=45 lovel=118 hivel=119
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit119_a#1.wav
+key=46 lovel=118 hivel=119
+loop_mode=no_loop
+volume=-3.77953
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit119_b1.wav
+key=47 lovel=118 hivel=119
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit119_c2.wav
+key=48 lovel=118 hivel=119
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit119_c#2.wav
+key=49 lovel=118 hivel=119
+offset=5568 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit119_d2.wav
+key=50 lovel=118 hivel=119
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit119_d#2.wav
+key=51 lovel=118 hivel=119
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit119_e2.wav
+key=52 lovel=118 hivel=119
+offset=4615 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit119_f2.wav
+key=53 lovel=118 hivel=119
+offset=4923 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit119_f#2.wav
+key=54 lovel=118 hivel=119
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit119_g2.wav
+key=55 lovel=118 hivel=119
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit119_g#2.wav
+key=56 lovel=118 hivel=119
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit119_a2.wav
+key=57 lovel=118 hivel=119
+offset=6511 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit119_a#2.wav
+key=58 lovel=118 hivel=119
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit119_b2.wav
+key=59 lovel=118 hivel=119
+offset=4886 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit122_b0.wav
+key=35 lovel=120 hivel=122
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit122_c1.wav
+key=36 lovel=120 hivel=122
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit122_c#1.wav
+key=37 lovel=120 hivel=122
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit122_d1.wav
+key=38 lovel=120 hivel=122
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit122_d#1.wav
+key=39 lovel=120 hivel=122
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit122_e1.wav
+key=40 lovel=120 hivel=122
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit122_f1.wav
+key=41 lovel=120 hivel=122
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit122_f#1.wav
+key=42 lovel=120 hivel=122
+loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit122_g1.wav
+key=43 lovel=120 hivel=122
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit122_g#1.wav
+key=44 lovel=120 hivel=122
+loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit122_a1.wav
+key=45 lovel=120 hivel=122
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit122_a#1.wav
+key=46 lovel=120 hivel=122
+loop_mode=no_loop
+volume=-3.77953
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit122_b1.wav
+key=47 lovel=120 hivel=122
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit122_c2.wav
+key=48 lovel=120 hivel=122
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit122_c#2.wav
+key=49 lovel=120 hivel=122
+offset=5430 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit122_d2.wav
+key=50 lovel=120 hivel=122
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit122_d#2.wav
+key=51 lovel=120 hivel=122
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit122_e2.wav
+key=52 lovel=120 hivel=122
+offset=4797 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit122_f2.wav
+key=53 lovel=120 hivel=122
+offset=4923 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit122_f#2.wav
+key=54 lovel=120 hivel=122
+offset=122 loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit122_g2.wav
+key=55 lovel=120 hivel=122
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit122_g#2.wav
+key=56 lovel=120 hivel=122
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit122_a2.wav
+key=57 lovel=120 hivel=122
+offset=5740 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit122_a#2.wav
+key=58 lovel=120 hivel=122
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit122_b2.wav
+key=59 lovel=120 hivel=122
+offset=4125 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit124_b0.wav
+key=35 lovel=123 hivel=124
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit124_c1.wav
+key=36 lovel=123 hivel=124
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit124_c#1.wav
+key=37 lovel=123 hivel=124
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit124_d1.wav
+key=38 lovel=123 hivel=124
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit124_d#1.wav
+key=39 lovel=123 hivel=124
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit124_e1.wav
+key=40 lovel=123 hivel=124
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit124_f1.wav
+key=41 lovel=123 hivel=124
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit124_f#1.wav
+key=42 lovel=123 hivel=124
+loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit124_g1.wav
+key=43 lovel=123 hivel=124
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit124_g#1.wav
+key=44 lovel=123 hivel=124
+offset=256 loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit124_a1.wav
+key=45 lovel=123 hivel=124
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit124_a#1.wav
+key=46 lovel=123 hivel=124
+loop_mode=no_loop
+volume=-3.77953
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit124_b1.wav
+key=47 lovel=123 hivel=124
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit124_c2.wav
+key=48 lovel=123 hivel=124
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit124_c#2.wav
+key=49 lovel=123 hivel=124
+offset=5808 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit124_d2.wav
+key=50 lovel=123 hivel=124
+offset=183 loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit124_d#2.wav
+key=51 lovel=123 hivel=124
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit124_e2.wav
+key=52 lovel=123 hivel=124
+offset=5161 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit124_f2.wav
+key=53 lovel=123 hivel=124
+offset=4986 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit124_f#2.wav
+key=54 lovel=123 hivel=124
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit124_g2.wav
+key=55 lovel=123 hivel=124
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit124_g#2.wav
+key=56 lovel=123 hivel=124
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit124_a2.wav
+key=57 lovel=123 hivel=124
+offset=5936 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit124_a#2.wav
+key=58 lovel=123 hivel=124
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit124_b2.wav
+key=59 lovel=123 hivel=124
+offset=4888 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit127_b0.wav
+key=35 lovel=125 hivel=127
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit127_c1.wav
+key=36 lovel=125 hivel=127
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit127_c#1.wav
+key=37 lovel=125 hivel=127
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit127_d1.wav
+key=38 lovel=125 hivel=127
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit127_d#1.wav
+key=39 lovel=125 hivel=127
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit127_e1.wav
+key=40 lovel=125 hivel=127
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit127_f1.wav
+key=41 lovel=125 hivel=127
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit127_f#1.wav
+key=42 lovel=125 hivel=127
+loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit127_g1.wav
+key=43 lovel=125 hivel=127
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit127_g#1.wav
+key=44 lovel=125 hivel=127
+loop_mode=one_shot
+volume=-3.77953
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit127_a1.wav
+key=45 lovel=125 hivel=127
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit127_a#1.wav
+key=46 lovel=125 hivel=127
+loop_mode=no_loop
+volume=-3.77953
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit127_b1.wav
+key=47 lovel=125 hivel=127
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit127_c2.wav
+key=48 lovel=125 hivel=127
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit127_c#2.wav
+key=49 lovel=125 hivel=127
+offset=5904 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit127_d2.wav
+key=50 lovel=125 hivel=127
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit127_d#2.wav
+key=51 lovel=125 hivel=127
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit127_e2.wav
+key=52 lovel=125 hivel=127
+offset=5161 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit127_f2.wav
+key=53 lovel=125 hivel=127
+offset=5049 loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit127_f#2.wav
+key=54 lovel=125 hivel=127
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit127_g2.wav
+key=55 lovel=125 hivel=127
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit127_g#2.wav
+key=56 lovel=125 hivel=127
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit127_a2.wav
+key=57 lovel=125 hivel=127
+loop_mode=no_loop
+ampeg_release=1
+
+<region>
+sample=samples\Jazz Kit127_a#2.wav
+key=58 lovel=125 hivel=127
+loop_mode=one_shot
+ampeg_release=40
+
+<region>
+sample=samples\Jazz Kit127_b2.wav
+key=59 lovel=125 hivel=127
+offset=5148 loop_mode=no_loop
+ampeg_release=1
