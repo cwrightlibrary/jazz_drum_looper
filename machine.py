@@ -1,16 +1,16 @@
-from music21 import *
+from scamp import *
 
-fp = "C:\\Users\\CWright\\Desktop\\drum_machine\\loop.mid"
-jazz_kit_drums = instrument.Instrument("jazz_kit", soundfont=fp)
-mf = midi.MidiFile()
-mf.open(fp)
-mf.read()
-mf.close()
+s = Session()
 
-s = midi.translate.midiFileToStream(mf)
+piano = s.new_part("piano").add_streaming_midi_playback(0)
+synth = s.new_osc_part("vibrato", ip_address="127.0.0.1", port=57120)
+silent = s.new_silent_part("silent")
 
-sp = midi.realtime.StreamPlayer(s)
+s.start_transcribing()
 
-jazz_kit_drums.autoAssignMidiChannel()
+for _ in range(4):
+	piano.play_note(60, 1, 0.5)
+	synth.play_note(62, 1, 0.5)
+	silent.play_note(63, 1, 0.5)
 
-sp.play()
+s.stop_transcribing().to_score(time_signature="6/8").show()
