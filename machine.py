@@ -1,16 +1,11 @@
 from scamp import *
 
-s = Session()
+session = Session()
 
-piano = s.new_part("piano").add_streaming_midi_playback(0)
-synth = s.new_osc_part("vibrato", ip_address="127.0.0.1", port=57120)
-silent = s.new_silent_part("silent")
+brush = "C:\Users\circ8\Documents\Chris\jazz_drum_looper-main\soundfonts\Brush.sf2"
 
-s.start_transcribing()
 
-for _ in range(4):
-	piano.play_note(60, 1, 0.5)
-	synth.play_note(62, 1, 0.5)
-	silent.play_note(63, 1, 0.5)
+drum = session.new_part(soundfont=brush)
 
-s.stop_transcribing().to_score(time_signature="6/8").show()
+for pitch in [35, 51, 42, 51, 35, 51, 42, 51]:
+	drum.play_note(pitch, 1, 0.5)
