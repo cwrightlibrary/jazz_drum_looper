@@ -1,5 +1,6 @@
 from scamp import *
 from drum_map import *
+from customtkinter import *
 from threading import Thread
 
 tempo = 100
@@ -65,15 +66,38 @@ def hi_hat_swing(n):
 		instrument_list[selected_instrument].play_note(open_hi_hat, 1, triplet_quarter_note)
 
 
+class App(CTk):
+	def __init__(self):
+		super().__init__()
+		self.geometry("400x250")
+		self.running = False
+
+		self.button = CTkButton(self, text="play", command=self.begin_thread)
+		self.button.pack(padx=20, pady=20)
+	def begin_thread(self):
+		if not self.running:
+			threading()
+			self.running = True
+
+app = App()
+
+
 def start_loop():
 	for n in beat:
+		app.update()
 		if ride:
 			ride_swing(n)
 		else:
 			hi_hat_swing(n)
 
 
+def threading():
+	loop_thread = Thread(target=start_loop)
+	loop_thread.start()
+
+
 session.register_keyboard_listener(on_press=keyboard_input)
 
-while True:
-	start_loop()
+app.mainloop()
+
+# start_loop()

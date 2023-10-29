@@ -51,7 +51,6 @@ open_triangle = 81
 
 # soundfonts/mid
 if name == "posix":
-	INPUT_MID = "/Users/christopherwright/Desktop/jazz_drum_looper-main/loop.mid"
 	brush = "/Users/christopherwright/Desktop/jazz_drum_looper-main/soundfonts/Brush.sf2"
 	brush_1 = "/Users/christopherwright/Desktop/jazz_drum_looper-main/soundfonts/Brush1.sf2"
 	brush_2 = "/Users/christopherwright/Desktop/jazz_drum_looper-main/soundfonts/Brush2.sf2"
@@ -61,24 +60,22 @@ if name == "posix":
 	jazz_3 = "/Users/christopherwright/Desktop/jazz_drum_looper-main/soundfonts/Jazz3.sf2"
 	jazz_4 = "/Users/christopherwright/Desktop/jazz_drum_looper-main/soundfonts/Jazz4.sf2"
 elif name == "nt":
-	# INPUT_MID = "C\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper_main\\loop.mid"
-	# brush = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Brush.sf2"
-	# brush1 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Brush1.sf2"
-	# brush_2 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Brush2.sf2"
-	# jazz = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz.sf2"
-	# jazz_1 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz1.sf2"
-	# jazz_2 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz2.sf2"
-	# jazz_3 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz3.sf2"
-	# jazz_4 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz4.sf2"
-	INPUT_MID = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\loop.mid"
-	brush = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Brush.sf2"
-	brush1 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Brush1.sf2"
-	brush_2 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Brush2.sf2"
-	jazz = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz.sf2"
-	jazz_1 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz1.sf2"
-	jazz_2 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz2.sf2"
-	jazz_3 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz3.sf2"
-	jazz_4 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz4.sf2"
+	brush = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Brush.sf2"
+	brush_1 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Brush1.sf2"
+	brush_2 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Brush2.sf2"
+	jazz = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz.sf2"
+	jazz_1 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz1.sf2"
+	jazz_2 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz2.sf2"
+	jazz_3 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz3.sf2"
+	jazz_4 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz4.sf2"
+	# brush = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Brush.sf2"
+	# brush1 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Brush1.sf2"
+	# brush_2 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Brush2.sf2"
+	# jazz = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz.sf2"
+	# jazz_1 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz1.sf2"
+	# jazz_2 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz2.sf2"
+	# jazz_3 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz3.sf2"
+	# jazz_4 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz4.sf2"
 
 # durations
 whole_note = 4
