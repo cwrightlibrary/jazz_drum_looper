@@ -1,91 +1,48 @@
-# WORKING MIDI PLAYER
-# from scamp import *
-# from mido import MidiFile
-# from os import name
-# from collections import namedtuple
+from scamp import *
+from drum_map import *
+from threading import Thread
 
-# if name == "posix":
-# 	INPUT_MID = "/Users/christopherwright/Desktop/jazz_drum_looper-main/loop.mid"
-# 	brush = "/Users/christopherwright/Desktop/jazz_drum_looper-main/soundfonts/Brush.sf2"
-# 	brush_1 = "/Users/christopherwright/Desktop/jazz_drum_looper-main/soundfonts/Brush1.sf2"
-# 	brush_2 = "/Users/christopherwright/Desktop/jazz_drum_looper-main/soundfonts/Brush2.sf2"
-# 	jazz = "/Users/christopherwright/Desktop/jazz_drum_looper-main/soundfonts/Jazz.sf2"
-# 	jazz_1 = "/Users/christopherwright/Desktop/jazz_drum_looper-main/soundfonts/Jazz1.sf2"
-# 	jazz_2 = "/Users/christopherwright/Desktop/jazz_drum_looper-main/soundfonts/Jazz2.sf2"
-# 	jazz_3 = "/Users/christopherwright/Desktop/jazz_drum_looper-main/soundfonts/Jazz3.sf2"
-# 	jazz_4 = "/Users/christopherwright/Desktop/jazz_drum_looper-main/soundfonts/Jazz4.sf2"
-# elif name == "nt":
-# 	# INPUT_MID = "C\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper_main\\loop.mid"
-# 	# brush = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Brush.sf2"
-# 	# brush1 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Brush1.sf2"
-# 	# brush_2 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Brush2.sf2"
-# 	# jazz = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz.sf2"
-# 	# jazz_1 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz1.sf2"
-# 	# jazz_2 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz2.sf2"
-# 	# jazz_3 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz3.sf2"
-# 	# jazz_4 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz4.sf2"
-# 	INPUT_MID = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\loop.mid"
-# 	brush = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Brush.sf2"
-# 	brush1 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Brush1.sf2"
-# 	brush_2 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Brush2.sf2"
-# 	jazz = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz.sf2"
-# 	jazz_1 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz1.sf2"
-# 	jazz_2 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz2.sf2"
-# 	jazz_3 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz3.sf2"
-# 	jazz_4 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz4.sf2"
+TEMPO = 100
 
-# mid = MidiFile(INPUT_MID, clip=True)
-# Note = namedtuple("Note", "channel pitch volume start_time length")
+beat = [1, 2, 3, 4]
+beat_changed = True
+playing = True
+active_beat = 1
+run = False
 
-# notes_started = {}
-# notes = []
+session = Session(tempo=TEMPO)
 
-# for track in mid.tracks:
-#     t = 0
-#     for message in track:
-#         t += message.time / mid.ticks_per_beat
-#         if message.type == "note_off" or (message.type == "note_on" and message.velocity == 0):
-#             volume, start_time = notes_started[(message.note, message.channel)]
-#             notes.append(Note(message.channel, message.note, volume, start_time, t - start_time))
-#         elif message.type == "note_on":
-#             notes_started[(message.note, message.channel)] = message.velocity / 127, t
+drum = session.new_part("Brush", soundfont=brush)
 
-# notes.sort(key=lambda note: note.start_time)
+def update_tempo():
+	prev_tempo = TEMPO
+	while True:
+		new_tempo = input("tempo: ")
+		if prev_tempo != new_tempo:
+			session.set_tempo_target(int(new_tempo), 1)
+			prev_tempo = new_tempo
 
-# channels, pitches, volumes, start_times, lengths = zip(*notes)
-# channels = list(channels)
-# pitches = list(pitches)
-# volumes = list(volumes)
-# start_times = list(start_times)
-# lengths = list(lengths)
 
-# inter_onset_times = [t2 - t1 for t1, t2 in zip(start_times[:-1], start_times[1:])]
+def drum_loop(n):
+	if n == 1:
+		drum.play_chord([bass_drum_1, ride_cymbal_1], 1, quarter_note)
+	elif n == 2:
+		drum.play_chord([pedal_hi_hat, ride_cymbal_1], 1, triplet_quarter_note * 2)
+		drum.play_note(ride_cymbal_1, 1, triplet_quarter_note)
+	elif n == 3:
+		drum.play_note(ride_cymbal_1, 1, quarter_note)
+	elif n == 4:
+		drum.play_note(ride_cymbal_1, 1, triplet_quarter_note * 2)
+		drum.play_note(ride_cymbal_1, 1, triplet_quarter_note)
 
-# TEMPO = 200
 
-# session = Session(tempo=TEMPO)
+def start_loop():
+	for n in range(len(beat)):
+		drum_loop(beat[n])
 
-# drum = session.new_part("Brush", soundfont=brush)
 
-# for wait_time, pitch, length, volume in zip(inter_onset_times, pitches, lengths, volumes):
-# 	drum.play_note(pitch, volume, length, blocking=False)
-# 	wait(wait_time)
+tempo_thread = Thread(target=update_tempo)
+tempo_thread.start()
 
-BPM = 240
-
-whole_note = 240
-half_note = 120
-quarter_note = 60
-eighth_note = 30
-sixteenth_note = 15
-dotted_quarter_note = 90
-dotted_eighth_note = 45
-dotted_sixteenth_note = 22.5
-triplet_quarter_note = 40
-triplet_eighth_note = 20
-triplet_sixteenth_note = 10
-
-notes = [whole_note, half_note, quarter_note, eighth_note, sixteenth_note, dotted_quarter_note, dotted_eighth_note, dotted_sixteenth_note, triplet_quarter_note, triplet_eighth_note, triplet_sixteenth_note]
-
-for note in notes:
-	print(note / BPM)
+while True:
+	start_loop()
