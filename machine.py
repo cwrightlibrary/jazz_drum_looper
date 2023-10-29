@@ -1,12 +1,14 @@
 from scamp import *
 from drum_map import *
-from customtkinter import *
-from threading import Thread
+
+# TRY TO USE PYGAME
 
 tempo = 100
 beat = [1, 2, 3, 4]
 beat_changed = True
 ride = True
+beat_idx = 0
+running = False
 
 session = Session(tempo=tempo)
 
@@ -66,38 +68,18 @@ def hi_hat_swing(n):
 		instrument_list[selected_instrument].play_note(open_hi_hat, 1, triplet_quarter_note)
 
 
-class App(CTk):
-	def __init__(self):
-		super().__init__()
-		self.geometry("400x250")
-		self.running = False
-
-		self.button = CTkButton(self, text="play", command=self.begin_thread)
-		self.button.pack(padx=20, pady=20)
-	def begin_thread(self):
-		if not self.running:
-			threading()
-			self.running = True
-
-app = App()
-
-
 def start_loop():
-	for n in beat:
-		app.update()
+	global beat_idx
+	while beat_idx < len(beat):
 		if ride:
-			ride_swing(n)
+			ride_swing(beat[beat_idx])
 		else:
-			hi_hat_swing(n)
-
-
-def threading():
-	loop_thread = Thread(target=start_loop)
-	loop_thread.start()
+			hi_hat_swing(beat[beat_idx])
+		beat_idx += 1
+		if beat_idx == len(beat):
+			beat_idx = 0
 
 
 session.register_keyboard_listener(on_press=keyboard_input)
 
-app.mainloop()
-
-# start_loop()
+start_loop()
