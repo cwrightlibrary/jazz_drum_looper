@@ -1,9 +1,9 @@
 from scamp import Session, fork_unsynchronized
 from drum_map import *
-from customtkinter import CTk, CTkFont, CTkButton
-from pyautogui import press
+from customtkinter import CTk, CTkFont, CTkButton, CTkSlider
 from time import sleep
 from drum_patterns import *
+import mido
 
 beat = [1, 2, 3, 4]
 beat_changed = True
@@ -15,6 +15,10 @@ alternate_pattern = 0
 
 patterns = ["samba", "mambo", "bossa_nova", "ballroom", "jazz", "waltz"]
 pattern_idx = 4
+
+port = mido.open_output(mido.get_output_names()[-1])
+port_num = len(mido.get_output_names()) - 1
+print(session.get_available_midi_input_devices())
 
 def keyboard_input(name, number):
 	if name in ["up", "down"]:
@@ -42,6 +46,10 @@ def keyboard_input(name, number):
 		print(alternate_pattern)
 
 
+def midi_input(message, dt):
+	pass
+
+
 def start_loop():
 	sleep(1)
 	global beat_idx
@@ -58,11 +66,14 @@ class App(CTk):
 		self.geometry("300x300")
 		self.heading_font = CTkFont(family="Aptos", size=30, weight="bold")
 
-		self.tempo_button_up = CTkButton(self, text="🔼", command=self.press_up, font=self.heading_font)
-		self.tempo_button_up.pack(padx=20, pady=(20, 10))
+		# self.tempo_button_up = CTkButton(self, text="🔼", command=self.press_up, font=self.heading_font)
+		# self.tempo_button_up.pack(padx=20, pady=(20, 10))
 
-		self.tempo_button_down = CTkButton(self, text="🔽", command=self.press_down, font=self.heading_font)
-		self.tempo_button_down.pack(padx=20, pady=10)
+		# self.tempo_button_down = CTkButton(self, text="🔽", command=self.press_down, font=self.heading_font)
+		# self.tempo_button_down.pack(padx=20, pady=10)
+
+		self.slider = CTkSlider(self, from_=60, to=290, command=self.slider_tempo)
+		self.slider.pack(padx=20, pady=(20, 10))
 
 		self.change_kit = CTkButton(self, text="🥁", command=self.press_change_kit, font=self.heading_font)
 		self.change_kit.pack(padx=20, pady=10)
@@ -77,6 +88,8 @@ class App(CTk):
 		press("left")
 	def press_change_cymbal(self):
 		press("right")
+	def slider_tempo(self, value):
+		print(int(value))
 
 
 def kill_loop():
@@ -89,7 +102,8 @@ def run_gui():
 	app.mainloop()
 
 
-session.register_keyboard_listener(on_press=keyboard_input)
+# session.register_keyboard_listener(on_press=keyboard_input)
+# session.register_midi_listener(port_num, callback_function=midi_input)
 
 fork_unsynchronized(run_gui)
 
