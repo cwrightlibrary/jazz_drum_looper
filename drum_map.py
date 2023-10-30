@@ -1,4 +1,5 @@
-from os import name
+from os import name, path
+from sys import argv
 
 # drum notes
 acoustic_drum = 35
@@ -60,22 +61,16 @@ if name == "posix":
 	jazz_3 = "/Users/christopherwright/Desktop/jazz_drum_looper-main/soundfonts/Jazz3.sf2"
 	jazz_4 = "/Users/christopherwright/Desktop/jazz_drum_looper-main/soundfonts/Jazz4.sf2"
 elif name == "nt":
-	# brush = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Brush.sf2"
-	# brush_1 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Brush1.sf2"
-	# brush_2 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Brush2.sf2"
-	# jazz = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz.sf2"
-	# jazz_1 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz1.sf2"
-	# jazz_2 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz2.sf2"
-	# jazz_3 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz3.sf2"
-	# jazz_4 = "C:\\Users\\circ8\\Documents\\Chris\\jazz_drum_looper-main\\soundfonts\\Jazz4.sf2"
-	brush = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Brush.sf2"
-	brush_1 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Brush1.sf2"
-	brush_2 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Brush2.sf2"
-	jazz = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz.sf2"
-	jazz_1 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz1.sf2"
-	jazz_2 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz2.sf2"
-	jazz_3 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz3.sf2"
-	jazz_4 = "C:\\Users\\CWright\\Documents\\jazz_drum_looper-main\\soundfonts\\Jazz4.sf2"
+	current_dir = path.dirname(path.abspath(argv[0]))
+	print(current_dir)
+	brush = current_dir + "\\soundfonts\\Brush.sf2"
+	brush_1 = current_dir + "\\soundfonts\\Brush1.sf2"
+	brush_2 = current_dir + "\\soundfonts\\Brush2.sf2"
+	jazz = current_dir + "\\soundfonts\\Jazz.sf2"
+	jazz_1 = current_dir + "\\soundfonts\\Jazz1.sf2"
+	jazz_2 = current_dir + "\\soundfonts\\Jazz2.sf2"
+	jazz_3 = current_dir + "\\soundfonts\\Jazz3.sf2"
+	jazz_4 = current_dir + "\\soundfonts\\Jazz4.sf2"
 
 # durations
 whole_note = 4
