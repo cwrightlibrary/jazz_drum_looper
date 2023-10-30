@@ -35,7 +35,7 @@ def start_loop():
 	sleep(1)
 	global beat_idx
 	while beat_idx < len(beat):
-		drum_pattern(ride, hat, "ballroom", 0, beat[beat_idx])
+		drum_pattern(ride, hat, "bossa_nova", 0, beat[beat_idx])
 		beat_idx += 1
 		if beat_idx == len(beat):
 			beat_idx = 0
@@ -81,6 +81,5 @@ def run_gui():
 session.register_keyboard_listener(on_press=keyboard_input)
 
 fork_unsynchronized(run_gui)
-
 
 start_loop()

@@ -17,6 +17,8 @@ jazz4 = session.new_part("Jazz", soundfont=jazz_4)
 instrument_list = [brush0, brush1, brush2, jazz0, jazz1, jazz2, jazz3, jazz4]
 selected_instrument = 0
 
+drum = instrument_list[selected_instrument]
+
 def ride_swing(n):
 	if n == 1:
 		instrument_list[selected_instrument].play_chord([bass_drum_1, ride_cymbal_1], 1, quarter_note)
@@ -46,7 +48,6 @@ def drum_pattern(ride, hat, genre, alternate, note):
 
 
 def samba_pattern(ride, hat, alternate, note):
-	drum = instrument_list[selected_instrument]
 	if ride:
 		cymbal = ride_cymbal_1
 	elif hat:
@@ -93,7 +94,6 @@ def samba_pattern(ride, hat, alternate, note):
 
 
 def mambo_pattern(ride, hat, note):
-	drum = instrument_list[selected_instrument]
 	if ride:
 		cymbal = ride_cymbal_1
 	elif hat:
@@ -113,24 +113,90 @@ def mambo_pattern(ride, hat, note):
 
 
 def bossa_nova_pattern(ride, hat, alternate, note):
-	drum = instrument_list[selected_instrument]
 	if ride:
 		cymbal = ride_cymbal_1
 	elif hat:
 		cymbal = closed_hi_hat
-
-	if note == 1:
-		pass
-	elif note == 2:
-		pass
-	elif note == 3:
-		pass
-	elif note == 4:
-		pass
-
+	if alternate == 0:
+		if note == 1:
+			drum.play_chord([bass_drum_1, cymbal], 1, eighth_note)
+			drum.play_note(cymbal, 1, eighth_note)
+		elif note == 2:
+			drum.play_chord([side_stick, cymbal], 1, eighth_note)
+			drum.play_chord([bass_drum_1, cymbal], 1, eighth_note)
+		elif note == 3:
+			drum.play_chord([bass_drum_1, cymbal], 1, eighth_note)
+			drum.play_chord([side_stick, cymbal], 1, eighth_note)
+		elif note == 4:
+			drum.play_note(cymbal, 1, eighth_note)
+			drum.play_chord([bass_drum_1, cymbal], 1, eighth_note)
+	elif alternate == 1:
+		if note == 1:
+			drum.play_chord([bass_drum_1, cymbal, side_stick], 1, eighth_note)
+			drum.play_note(cymbal, 1, eighth_note)
+		elif note == 2:
+			drum.play_chord([side_stick, cymbal], 1, eighth_note)
+			drum.play_chord([bass_drum_1, cymbal], 1, eighth_note)
+		elif note == 3:
+			drum.play_chord([bass_drum_1, cymbal, side_stick], 1, eighth_note)
+			drum.play_chord([side_stick, cymbal], 1, eighth_note)
+		elif note == 4:
+			drum.play_note(cymbal, 1, eighth_note)
+			drum.play_chord([bass_drum_1, cymbal, side_stick], 1, eighth_note)
+	elif alternate == 2:
+		if note == 1:
+			drum.play_chord([bass_drum_1, cymbal, side_stick], 1, eighth_note)
+			drum.play_note(cymbal, 1, eighth_note)
+		elif note == 2:
+			drum.play_chord([side_stick, cymbal], 1, eighth_note)
+			drum.play_chord([bass_drum_1, cymbal], 1, eighth_note)
+		elif note == 3:
+			drum.play_chord([bass_drum_1, cymbal], 1, eighth_note)
+			drum.play_chord([side_stick, cymbal], 1, eighth_note)
+		elif note == 4:
+			drum.play_note(cymbal, 1, eighth_note)
+			drum.play_chord([bass_drum_1, cymbal], 1, eighth_note)
+	elif alternate == 3:
+		if note == 1:
+			drum.play_chord([bass_drum_1, cymbal, side_stick], 1, eighth_note)
+			drum.play_note(cymbal, 1, eighth_note)
+		elif note == 2:
+			drum.play_note(cymbal, 1, eighth_note)
+			drum.play_chord([bass_drum_1, cymbal, side_stick], 1, eighth_note)
+		elif note == 3:
+			drum.play_chord([bass_drum_1, cymbal], 1, eighth_note)
+			drum.play_note(cymbal, 1, eighth_note)
+		elif note == 4:
+			drum.play_chord([side_stick, cymbal], 1, eighth_note)
+			drum.play_chord([bass_drum_1, cymbal], 1, eighth_note)
+	elif alternate == 4:
+		if note == 1:
+			drum.play_chord([bass_drum_1, cymbal, side_stick], 1, eighth_note)
+			drum.play_note(cymbal, 1, eighth_note)
+		elif note == 2:
+			drum.play_note(cymbal, 1, eighth_note)
+			drum.play_chord([bass_drum_1, cymbal, side_stick], 1, eighth_note)
+		elif note == 3:
+			drum.play_chord([bass_drum_1, cymbal], 1, eighth_note)
+			drum.play_note(cymbal, 1, eighth_note)
+		elif note == 4:
+			drum.play_chord([side_stick, cymbal], 1, eighth_note)
+			drum.play_chord([bass_drum_1, cymbal], 1, eighth_note)
+	elif alternate == 5:
+		if note == 1:
+			drum.play_chord([bass_drum_1, cymbal], 1, eighth_note)
+			drum.play_chord([side_stick, cymbal], 1, eighth_note)
+		elif note == 2:
+			drum.play_note(cymbal, 1, eighth_note)
+			drum.play_chord([bass_drum_1, cymbal, side_stick], 1, eighth_note)
+		elif note == 3:
+			drum.play_chord([bass_drum_1, cymbal], 1, eighth_note)
+			drum.play_chord([side_stick, cymbal], 1, eighth_note)
+		elif note == 4:
+			drum.play_chord([side_stick, cymbal], 1, eighth_note)
+			drum.play_chord([bass_drum_1, cymbal], 1, eighth_note)
 
 def ballroom_pattern(ride, hat, note):
-	drum = instrument_list[selected_instrument]
 	if ride:
 		cymbal = ride_cymbal_1
 	elif hat:
@@ -153,7 +219,6 @@ def ballroom_pattern(ride, hat, note):
 
 
 def jazz_pattern(ride, hat, alternate, note):
-	drum = instrument_list[selected_instrument]
 	if ride:
 		cymbal = ride_cymbal_1
 	elif hat:
@@ -170,7 +235,6 @@ def jazz_pattern(ride, hat, alternate, note):
 
 
 def waltz_pattern(ride, hat, alternate, note):
-	drum = instrument_list[selected_instrument]
 	if ride:
 		cymbal = ride_cymbal_1
 	elif hat:
