@@ -272,7 +272,7 @@ def jazz_pattern(ride, hat, alternate, note):
 			playnote([bass_drum_1, cymbal], triplet_eighth_note * 2)
 			playnote([cymbal], triplet_eighth_note)
 		elif note == 2:
-			playnote([bass_drum_1, side_stick], triplet_eighth_note * 2)
+			playnote([side_stick, cymbal], triplet_eighth_note * 2)
 			playnote([cymbal], triplet_eighth_note)
 		elif note == 3:
 			playnote([bass_drum_1, cymbal], triplet_eighth_note * 2)

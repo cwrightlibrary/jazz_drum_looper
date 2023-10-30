@@ -13,6 +13,9 @@ beat_idx = 0
 running = False
 alternate_pattern = 0
 
+patterns = ["samba", "mambo", "bossa_nova", "ballroom", "jazz", "waltz"]
+pattern_idx = 4
+
 def keyboard_input(name, number):
 	if name in ["up", "down"]:
 		global tempo, beat_idx
@@ -22,11 +25,14 @@ def keyboard_input(name, number):
 			tempo -= 25
 		remaining_beats = 4 - beat_idx
 		session.set_tempo_target(tempo, remaining_beats)
-		print(remaining_beats)
+		print(tempo)
 	elif name == "right":
-		global ride, hat
-		ride = not ride
-		hat = not hat
+		global pattern_idx
+		if pattern_idx < len(patterns) - 1:
+			pattern_idx += 1
+		else:
+			pattern_idx = 0
+		print(patterns[pattern_idx])
 	elif name == "left":
 		global alternate_pattern
 		if alternate_pattern < 6:
@@ -40,7 +46,7 @@ def start_loop():
 	sleep(1)
 	global beat_idx
 	while beat_idx < len(beat):
-		drum_pattern(ride, hat, "samba", alternate_pattern, beat[beat_idx])
+		drum_pattern(ride, hat, patterns[pattern_idx], alternate_pattern, beat[beat_idx])
 		beat_idx += 1
 		if beat_idx == len(beat):
 			beat_idx = 0
