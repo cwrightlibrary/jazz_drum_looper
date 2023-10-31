@@ -247,9 +247,9 @@ def ballroom_pattern(ride, hat, note):
 
 	if note == 1:
 		playnote([bass_drum_1, cymbal], eighth_note)
-		playnote([cymbal], triplet_sixteenth_note)
-		playnote([cymbal], triplet_sixteenth_note)
-		playnote([side_stick], triplet_sixteenth_note)
+		playnote([cymbal], triplet_eighth_note)
+		playnote([cymbal], triplet_eighth_note)
+		playnote([side_stick], triplet_eighth_note)
 	elif note == 2:
 		playnote([pedal_hi_hat, cymbal], eighth_note)
 		playnote([side_stick, cymbal], eighth_note)
@@ -269,56 +269,50 @@ def jazz_pattern(ride, hat, alternate, note):
 	
 	if alternate == 0 or alternate > 3:
 		if note == 1:
-			playnote([bass_drum_1, cymbal], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([bass_drum_1, cymbal], triplet_quarter_note * 2)
+			playnote([cymbal], triplet_quarter_note)
 		elif note == 2:
-			playnote([side_stick, cymbal], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([side_stick, cymbal], triplet_quarter_note * 2)
+			playnote([cymbal], triplet_quarter_note)
 		elif note == 3:
-			playnote([bass_drum_1, cymbal], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([bass_drum_1, cymbal], triplet_quarter_note * 2)
+			playnote([cymbal], triplet_quarter_note)
 		elif note == 4:
-			playnote([cymbal, side_stick], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([cymbal, side_stick], triplet_quarter_note * 2)
+			playnote([cymbal], triplet_quarter_note)
 	elif alternate == 1:
 		if note == 1:
-			playnote([bass_drum_1, cymbal], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([bass_drum_1, cymbal], triplet_quarter_note * 2)
+			playnote([cymbal], triplet_quarter_note)
 		elif note == 2:
-			playnote([bass_drum_1, side_stick], triplet_eighth_note * 2)
-			playnote([bass_drum_1, cymbal], triplet_eighth_note)
+			playnote([bass_drum_1, side_stick], triplet_quarter_note * 2)
+			playnote([bass_drum_1, cymbal], triplet_quarter_note)
 		elif note == 3:
-			playnote([bass_drum_1, cymbal], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([bass_drum_1, cymbal], triplet_quarter_note * 2)
+			playnote([cymbal], triplet_quarter_note)
 		elif note == 4:
-			playnote([cymbal, side_stick], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([cymbal, side_stick], triplet_quarter_note * 2)
+			playnote([cymbal], triplet_quarter_note)
 	elif alternate == 2:
 		if note == 1:
-			playnote([bass_drum_1, cymbal], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([bass_drum_1, cymbal], quarter_note)
 		elif note == 2:
-			playnote([bass_drum_1, side_stick], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([cymbal, side_stick], triplet_quarter_note * 2)
+			playnote([cymbal], triplet_quarter_note)
 		elif note == 3:
-			playnote([bass_drum_1, cymbal], triplet_eighth_note * 2)
-			playnote([bass_drum_1, cymbal], triplet_eighth_note)
+			playnote([cymbal], quarter_note)
 		elif note == 4:
-			playnote([cymbal, side_stick], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([cymbal, side_stick], triplet_quarter_note * 2)
+			playnote([cymbal], triplet_quarter_note)
 	elif alternate == 3:
 		if note == 1:
-			playnote([bass_drum_1, cymbal], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([bass_drum_1, cymbal], quarter_note)
 		elif note == 2:
-			playnote([bass_drum_1, side_stick], triplet_eighth_note * 2)
-			playnote([bass_drum_1, cymbal], triplet_eighth_note)
+			playnote([cymbal, side_stick], quarter_note)
 		elif note == 3:
-			playnote([cymbal], triplet_eighth_note * 2)
-			playnote([bass_drum_1, cymbal], triplet_eighth_note)
+			playnote([cymbal], quarter_note)
 		elif note == 4:
-			playnote([cymbal, side_stick], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([cymbal, side_stick], quarter_note)
 
 
 def waltz_pattern(ride, hat, alternate, note):
@@ -342,48 +336,48 @@ def waltz_pattern(ride, hat, alternate, note):
 			playnote([side_stick], quarter_note)
 	elif alternate == 2:
 		if note == 1:
-			playnote([bass_drum_1, cymbal], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([bass_drum_1, cymbal], triplet_quarter_note * 2)
+			playnote([cymbal], triplet_quarter_note)
 		elif note == 2:
-			playnote([side_stick, cymbal], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([side_stick, cymbal], triplet_quarter_note * 2)
+			playnote([cymbal], triplet_quarter_note)
 		elif note == 3:
-			playnote([side_stick, cymbal], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([side_stick, cymbal], triplet_quarter_note * 2)
+			playnote([cymbal], triplet_quarter_note)
 	elif alternate == 3:
 		if note == 1:
-			playnote([bass_drum_1, cymbal], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([bass_drum_1, cymbal], triplet_quarter_note * 2)
+			playnote([cymbal], triplet_quarter_note)
 		elif note == 2:
-			playnote([side_stick, cymbal], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([side_stick, cymbal], triplet_quarter_note * 2)
+			playnote([cymbal], triplet_quarter_note)
 		elif note == 3:
-			playnote([side_stick, cymbal], triplet_eighth_note * 2)
-			playnote([side_stick, cymbal], triplet_eighth_note)
+			playnote([side_stick, cymbal], triplet_quarter_note * 2)
+			playnote([side_stick, cymbal], triplet_quarter_note)
 	elif alternate == 4:
 		if note == 1:
 			playnote([bass_drum_1, cymbal], quarter_note)
 		elif note == 2:
 			playnote([side_stick, cymbal], quarter_note)
 		elif note == 3:
-			playnote([cymbal], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([cymbal], triplet_quarter_note * 2)
+			playnote([cymbal], triplet_quarter_note)
 	elif alternate == 5:
 		if note == 1:
-			playnote([bass_drum_1, cymbal], triplet_eighth_note * 2)
-			playnote([side_stick], triplet_eighth_note)
+			playnote([bass_drum_1, cymbal], triplet_quarter_note * 2)
+			playnote([side_stick], triplet_quarter_note)
 		elif note == 2:
-			playnote([cymbal], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([cymbal], triplet_quarter_note * 2)
+			playnote([cymbal], triplet_quarter_note)
 		elif note == 3:
 			playnote([side_stick, cymbal], quarter_note)
 	elif alternate == 6:
 		if note == 1:
-			playnote([bass_drum_1, side_stick, cymbal], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([bass_drum_1, side_stick, cymbal], triplet_quarter_note * 2)
+			playnote([cymbal], triplet_quarter_note)
 		elif note == 2:
-			playnote([side_stick, cymbal], triplet_eighth_note * 2)
-			playnote([cymbal], triplet_eighth_note)
+			playnote([side_stick, cymbal], triplet_quarter_note * 2)
+			playnote([cymbal], triplet_quarter_note)
 		elif note == 3:
-			playnote([side_stick, cymbal], triplet_eighth_note * 2)
-			playnote([bass_drum_1, cymbal], triplet_eighth_note)
+			playnote([side_stick, cymbal], triplet_quarter_note * 2)
+			playnote([bass_drum_1, cymbal], triplet_quarter_note)
