@@ -1,7 +1,7 @@
 from scamp import Session
 from drum_map import *
 
-tempo = 120
+tempo = 100
 
 session = Session(tempo=tempo)
 

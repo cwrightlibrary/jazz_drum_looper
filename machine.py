@@ -4,6 +4,7 @@ from customtkinter import CTk, CTkFont, CTkButton, CTkSlider, CTkLabel
 from time import sleep
 from drum_patterns import *
 from pyautogui import *
+from brush_loop import *
 
 beat = [1, 2, 3, 4]
 beat_changed = True
@@ -83,6 +84,8 @@ class App(CTk):
 
 		self.change_drum = CTkButton(self, text="🎵", command=self.change_drum, font=self.heading_font)
 		self.change_drum.pack(padx=20, pady=(10, 20))
+
+		brush_swirl_loop.play()
 	def press_change_kit(self):
 		press("left")
 	def press_change_cymbal(self):
@@ -90,6 +93,7 @@ class App(CTk):
 	def click_slider(self, value):
 		self.current_tempo = int(self.slider.get())
 		self.tempo_label.configure(text="tempo: " + str(self.current_tempo))
+		print(self.current_tempo / 100)
 	def release_slider(self, value):
 		global new_tempo
 		new_tempo = self.current_tempo
