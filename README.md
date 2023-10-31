@@ -1,1 +1,7 @@
-# jazz_drum_looper
+# jazz drummer
+
+A jazz drum looper with customizable settings.
+
+## 🛠
+
+- [ ] **finish ui in *scratchpad.py***
