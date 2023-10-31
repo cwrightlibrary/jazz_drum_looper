@@ -63,7 +63,7 @@ def start_loop():
 class App(CTk):
 	def __init__(self):
 		super().__init__()
-		self.geometry("300x300")
+		self.geometry("500x500")
 		self.heading_font = CTkFont(family="Aptos", size=30, weight="bold")
 
 		self.current_tempo = tempo
@@ -85,7 +85,6 @@ class App(CTk):
 		self.change_drum = CTkButton(self, text="🎵", command=self.change_drum, font=self.heading_font)
 		self.change_drum.pack(padx=20, pady=(10, 20))
 
-		brush_swirl_loop.play()
 	def press_change_kit(self):
 		press("left")
 	def press_change_cymbal(self):
@@ -101,9 +100,11 @@ class App(CTk):
 	def change_drum(self):
 		press("down")
 
+brush_swirl_loop.play()
 
 def kill_loop():
 	session.kill()
+	brush_swirl_loop.stop()
 
 
 def run_gui():

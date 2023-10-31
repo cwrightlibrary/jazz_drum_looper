@@ -40,4 +40,4 @@ class WavePlayerLoop(threading.Thread):
 		self.loop = False
 
 
-brush_swirl_loop = WavePlayerLoop("brush_loop.wav")
+brush_swirl_loop = WavePlayerLoop("brush_loop_quiet.wav")
