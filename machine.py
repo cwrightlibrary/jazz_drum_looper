@@ -12,9 +12,11 @@ hat = False
 beat_idx = 0
 running = False
 alternate_pattern = 0
+new_tempo = tempo
 
 patterns = ["samba", "mambo", "bossa_nova", "ballroom", "jazz", "waltz"]
 pattern_idx = 4
+
 
 def keyboard_input(name, number):
 	if name == "right":
@@ -23,16 +25,27 @@ def keyboard_input(name, number):
 			pattern_idx += 1
 		else:
 			pattern_idx = 0
-		print(patterns[pattern_idx])
 	elif name == "left":
 		global alternate_pattern
 		if alternate_pattern < 6:
 			alternate_pattern += 1
 		else:
 			alternate_pattern = 0
-		print(alternate_pattern)
-	elif name == "up":
-		global tempo, beat_idx
+	elif name == "down":
+		global instrument_list, selected_instrument
+		if selected_instrument < len(instrument_list):
+			selected_instrument += 1
+		else:
+			selected_instrument = 0
+		print(selected_instrument)
+		
+
+
+def keyboard_output(name, number):
+	if name == "up":
+		global new_tempo, tempo, beat_idx
+		if tempo != new_tempo:
+			tempo = new_tempo
 		session.set_tempo_target(tempo, 4 - beat_idx)
 
 
@@ -54,9 +67,10 @@ class App(CTk):
 
 		self.current_tempo = tempo
 
-		self.slider = CTkSlider(self, from_=60, to=200, command=self.slider_tempo)
+		self.slider = CTkSlider(self, from_=60, to=200, command=self.click_slider)
 		self.slider.pack(padx=20, pady=(20, 10))
 		self.slider.set(tempo)
+		self.slider.bind("<ButtonRelease-1>", self.release_slider)
 
 		self.tempo_label = CTkLabel(self, text="tempo: " + str(self.current_tempo), font=self.heading_font)
 		self.tempo_label.pack(padx=20, pady=10)
@@ -65,17 +79,23 @@ class App(CTk):
 		self.change_kit.pack(padx=20, pady=10)
 
 		self.change_cymbal = CTkButton(self, text="📀", command=self.press_change_cymbal, font=self.heading_font)
-		self.change_cymbal.pack(padx=20, pady=(10, 20))
+		self.change_cymbal.pack(padx=20, pady=20)
+
+		self.change_drum = CTkButton(self, text="🎵", command=self.change_drum, font=self.heading_font)
+		self.change_drum.pack(padx=20, pady=(10, 20))
 	def press_change_kit(self):
 		press("left")
 	def press_change_cymbal(self):
 		press("right")
-	def slider_tempo(self, value):
-		global tempo
-		tempo = int(value)
-		self.current_tempo = int(value)
-		self.tempo_label.configure(text="tempo: " + str(int(value)))
+	def click_slider(self, value):
+		self.current_tempo = int(self.slider.get())
+		self.tempo_label.configure(text="tempo: " + str(self.current_tempo))
+	def release_slider(self, value):
+		global new_tempo
+		new_tempo = self.current_tempo
 		press("up")
+	def change_drum(self):
+		press("down")
 
 
 def kill_loop():
@@ -88,7 +108,7 @@ def run_gui():
 	app.mainloop()
 
 
-session.register_keyboard_listener(on_press=keyboard_input)
+session.register_keyboard_listener(on_press=keyboard_input, on_release=keyboard_output)
 
 fork_unsynchronized(run_gui)
 
