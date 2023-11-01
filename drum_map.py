@@ -51,6 +51,7 @@ mute_triangle = 80
 open_triangle = 81
 
 # soundfonts/mid
+
 if name == "posix":
 	brush = "/Users/christopherwright/Desktop/jazz_drum_looper-main/soundfonts/Brush.sf2"
 	brush_1 = "/Users/christopherwright/Desktop/jazz_drum_looper-main/soundfonts/Brush1.sf2"
