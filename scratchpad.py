@@ -13,7 +13,6 @@ alternates = [
 genre_current = 0
 alternate_current = 0
 
-print(alternates[genre_current][alternate_current])
 
 class Tempo(CTkFrame):
 	def __init__(self, master):
@@ -52,27 +51,62 @@ class Genre(CTkFrame):
 		self.genre_prev = CTkButton(master, text="◀", command=self.genre_prev_command, width=50, font=self.button_font)
 		self.genre_prev.grid(row=1, column=0, padx=(5, 2), sticky="ew")
 
-		self.genre_slider = CTkSlider(master, from_=0, to=len(genres) - 1, number_of_steps=len(genres) - 1, command=self.on_click)
+		self.genre_slider = CTkSlider(master, from_=0, to=len(genres) - 1, number_of_steps=len(genres) - 1, command=self.on_click_genre)
 		self.genre_slider.grid(row=1, column=1, padx=2, pady=5, sticky="ew")
 		self.genre_slider.set(genre_current)
-		self.genre_slider.bind("<ButtonRelease-1>", self.on_release)
+		self.genre_slider.bind("<ButtonRelease-1>", self.on_release_genre)
 
 		self.genre_next = CTkButton(master, text="▶", command=self.genre_next_command, width=50, font=self.button_font)
 		self.genre_next.grid(row=1, column=2, padx=(2, 5), sticky="ew")
+
+		self.alternate_chosen_text = alternates[genre_current][alternate_current]
+		self.alternate_label = CTkLabel(master, text=self.alternate_chosen_text, font=self.font)
+		self.alternate_label.grid(row=2, column=0, columnspan=3, padx=5, pady=5, sticky="ew")
+
+		self.alternate_prev = CTkButton(master, text="◀", command=self.alternate_prev_command, width=50, font=self.button_font)
+		self.alternate_prev.grid(row=3, column=0, padx=(5, 2), sticky="ew")
+
+		self.alternate_slider = CTkSlider(master, from_=0, to=6, number_of_steps=len(alternates) - 1, command=self.on_click_alternate)
+		self.alternate_slider.grid(row=3, column=1, padx=2, pady=5, sticky="ew")
+		self.alternate_slider.set(genre_current)
+		self.alternate_slider.bind("<ButtonRelease-1>", self.on_release_alternate)
+
+		self.alternate_next = CTkButton(master, text="▶", command=self.alternate_next_command, width=50, font=self.button_font)
+		self.alternate_next.grid(row=3, column=2, padx=(2, 5), sticky="ew")
 	
-	def on_click(self, value):
+	def on_click_genre(self, value):
 		genre_current = int(self.genre_slider.get())
+		alternate_current = 0
 		self.genre_chosen_text = genres[genre_current]
 		self.genre_label.configure(text=self.genre_chosen_text)
+		self.alternate_chosen_text = alternates[genre_current][alternate_current]
+		self.alternate_label.configure(text=self.alternate_chosen_text)
 
-	def on_release(self, value):
+	def on_release_genre(self, value):
 		pass
-		
+
 	def genre_prev_command(self):
 		pass
 
 	def genre_next_command(self):
 		pass
+
+	def on_click_alternate(self, value):
+		alternate_current = int(self.alternate_slider.get())
+		self.alternate_chosen_text = alternates[genre_current][alternate_current]
+		self.alternate_label.configure(text=self.alternate_chosen_text)
+		print(genre_current)
+		print(alternate_current)
+
+	def on_release_alternate(self, value):
+		pass
+
+	def alternate_prev_command(self):
+		pass
+
+	def alternate_next_command(self):
+		pass
+
 
 
 class Alternate(CTkFrame):
@@ -98,13 +132,12 @@ class Alternate(CTkFrame):
 		self.alternate_next = CTkButton(master, text="▶", command=self.alternate_next_command, width=50, font=self.button_font)
 		self.alternate_next.grid(row=1, column=2, padx=(2, 5), sticky="ew")
 	
-	def on_click(self, value):
+	def on_click_alternate(self, value):
 		alternate_current = int(self.alternate_slider.get())
-		self.alternate_slider.configure(to=len(alternates[genre_current][alternate_current]))
 		self.alternate_chosen_text = alternates[genre_current][alternate_current]
 		self.alternate_label.configure(text=self.alternate_chosen_text)
 
-	def on_release(self, value):
+	def on_release_alternate(self, value):
 		pass
 		
 	def alternate_prev_command(self):
@@ -124,7 +157,7 @@ class App(CTk):
 		self.grid_rowconfigure((0, 1, 2, 3, 4), weight=1)
 
 		self.app_name_frame = CTkFrame(self)
-		self.app_name_frame.grid(row=0, column=0, padx=20, pady=(0, 10), sticky="new")
+		self.app_name_frame.grid(row=0, column=0, padx=20, pady=(0, 5), sticky="new")
 		self.app_name_frame.grid_columnconfigure(0, weight=1)
 
 		self.app_name = CTkLabel(self.app_name_frame, text="jazz drummer", font=self.app_name_font, corner_radius=6)
@@ -139,14 +172,9 @@ class App(CTk):
 		self.change_genre_frame = CTkFrame(self)
 		self.change_genre_frame.grid(row=2, column=0, padx=20, pady=10, sticky="nsew")
 		self.change_genre_frame.grid_columnconfigure(1, weight=1)
+		self.change_genre_frame.grid_columnconfigure((1, 1), weight=1)
 
 		self.change_genre = Genre(self.change_genre_frame)
-
-		self.alternate_pattern_frame = CTkFrame(self)
-		self.alternate_pattern_frame.grid(row=4, column=0, padx=20, pady=(10, 20), sticky="nsew")
-		self.alternate_pattern_frame.grid_columnconfigure(0, weight=1)
-
-		self.alternate_pattern = Alternate(self.alternate_pattern_frame)
 
 
 app = App()
