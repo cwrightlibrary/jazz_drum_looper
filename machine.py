@@ -1,10 +1,9 @@
-from scamp import Session, fork_unsynchronized
+from scamp import Session, fork, fork_unsynchronized
 from drum_map import *
 from customtkinter import CTk, CTkFont, CTkButton, CTkSlider, CTkLabel, CTkFrame, CTkSwitch
 from time import sleep
 from drum_patterns import *
 from pyautogui import *
-from brush_loop import *
 from darkdetect import isDark
 
 if isDark():
@@ -32,7 +31,7 @@ alternates = [
 	["tennessee", "musette", "swing", "swing (more bass)", "swing (less cymbal)", "swing (offset pedal)", "swing (offset pedal alt)"]
 ]
 
-genre_current = 0
+genre_current = 4
 alternate_current = 0
 
 
@@ -49,13 +48,6 @@ def keyboard_input(name, number):
 			alternate_pattern += 1
 		else:
 			alternate_pattern = 0
-	elif name == "down":
-		global instrument_list, selected_instrument
-		if selected_instrument < len(instrument_list):
-			selected_instrument += 1
-		else:
-			selected_instrument = 0
-		print(selected_instrument)
 		
 
 
@@ -140,6 +132,7 @@ class Genre(CTkFrame):
 		print("alternate " + str(alternate_current))
 
 	def on_release_genre(self, value):
+		# press("left")
 		pass
 
 	def alternate_prev_command(self):
@@ -154,6 +147,7 @@ class Genre(CTkFrame):
 			self.alternate_chosen_text = alternates[genre_current][alternate_current]
 			self.alternate_label.configure(text=self.alternate_chosen_text)
 			print(alternate_current)
+		press("left")
 	def alternate_next_command(self):
 		global alternates, alternate_current, genres, genre_current
 		if alternate_current < len(alternates[genre_current]) - 1:
@@ -166,6 +160,7 @@ class Genre(CTkFrame):
 			self.alternate_chosen_text = alternates[genre_current][alternate_current]
 			self.alternate_label.configure(text=self.alternate_chosen_text)
 			print(alternate_current)
+		press("left")
 
 
 class Instrument(CTkFrame):
@@ -245,11 +240,8 @@ class App(CTk):
 		self.instrument_select_frame.grid_columnconfigure(1, weight=1)
 		self.instrument_select = Instrument(self.instrument_select_frame)
 
-brush_swirl_loop.play()
-
 def kill_loop():
 	session.kill()
-	brush_swirl_loop.stop()
 
 
 def run_gui():
@@ -261,5 +253,7 @@ def run_gui():
 session.register_keyboard_listener(on_press=keyboard_input, on_release=keyboard_output)
 
 fork_unsynchronized(run_gui)
+
+fork(play_bg)
 
 start_loop()

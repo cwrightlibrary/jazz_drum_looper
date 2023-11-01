@@ -5,19 +5,7 @@ tempo = 100
 
 session = Session(tempo=tempo)
 
-brush0 = session.new_part("Brush", soundfont=brush)
-brush1 = session.new_part("Brush", soundfont=brush_1)
-brush2 = session.new_part("Brush", soundfont=brush_2)
-jazz0 = session.new_part("Jazz", soundfont=jazz)
-jazz1 = session.new_part("Jazz", soundfont=jazz_1)
-jazz2 = session.new_part("Jazz", soundfont=jazz_2)
-jazz3 = session.new_part("Jazz", soundfont=jazz_3)
-jazz4 = session.new_part("Jazz", soundfont=jazz_4)
-
-instrument_list = [brush0, brush1, brush2, jazz0, jazz1, jazz2, jazz3, jazz4]
-selected_instrument = 0
-
-drum = instrument_list[selected_instrument]
+drum = session.new_part("Brush", soundfont=brush)
 
 
 def playnote(drum_note, length):
@@ -25,6 +13,11 @@ def playnote(drum_note, length):
 		drum.play_note(drum_note[0], 1, length)
 	elif len(drum_note) > 1:
 		drum.play_chord(drum_note, 1, length)
+
+
+def play_bg():
+	while True:
+		drum.play_note(electric_snare, 1, 4)
 
 
 def drum_pattern(ride, snare, genre, alternate, note):

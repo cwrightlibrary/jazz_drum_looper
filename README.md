@@ -4,5 +4,6 @@ A jazz drum looper with customizable settings.
 
 ## 🛠
 
-- [ ] **make the soundfont better**
+- [ ] **find a way to add reverb**
+- [x] make the soundfont better
 - [x] finish ui in *scratchpad.py*
