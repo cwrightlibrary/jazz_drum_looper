@@ -278,7 +278,6 @@ def jazz_pattern(cymbal, snare, alternate, note, drummer):
 
 
 def waltz_pattern(cymbal, snare, alternate, note, drummer):
-
 	if alternate == 0 or alternate > 6:
 		if note == 1:
 			playnote([bass_drum_1, cymbal], quarter_note, drummer)

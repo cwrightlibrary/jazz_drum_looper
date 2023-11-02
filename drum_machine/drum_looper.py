@@ -30,19 +30,37 @@ class DrumMachine:
 		self.BEATS = [1, 2, 3, 4]
 		self.CURRENT_BEAT = 0
 
-		self.RIDE_BOOL = True
-		self.HI_HAT_BOOL = False
-		self.SNARE_BOOL = True
-		self.SIDE_STICK_BOOL = False
+		self.RIDE_BOOL = False
+		self.HI_HAT_CLOSED_BOOL = False
+		self.HI_HAT_OPEN_BOOL = True
+		self.SNARE_BOOL = False
+		self.SIDE_STICK_BOOL = True
+		self.HI_HAT_PEDAL_BOOL = False
 
 		self.RIDE = ride_cymbal_1
-		self.HI_HAT = closed_hi_hat
+		self.HI_HAT_CLOSED = closed_hi_hat
+		self.HI_HAT_OPEN = open_hi_hat
 		self.SNARE = acoustic_snare
 		self.SIDE_STICK = side_stick
+		self.HI_HAT_PEDAL = pedal_hi_hat
 		self.NO_INSTRUMENT = None
 
-		self.CYMBAL = self.RIDE
-		self.SNARE_HIT = self.SNARE
+		if self.RIDE_BOOL:
+			self.CYMBAL = self.RIDE
+		if self.HI_HAT_CLOSED_BOOL:
+			self.CYMBAL = self.HI_HAT_CLOSED
+		if self.HI_HAT_OPEN_BOOL:
+			self.CYMBAL = self.HI_HAT_OPEN
+		if not self.RIDE_BOOL and not self.HI_HAT_CLOSED_BOOL and not self.HI_HAT_OPEN_BOOL:
+			self.CYMBAL = self.NO_INSTRUMENT
+		if self.SNARE_BOOL:
+			self.SNARE_HIT = self.SNARE
+		if self.SIDE_STICK_BOOL:
+			self.SNARE_HIT = self.SIDE_STICK
+		if self.HI_HAT_PEDAL_BOOL:
+			self.SNARE_HIT = self.HI_HAT_PEDAL
+		if not self.SNARE_BOOL and not self.SIDE_STICK_BOOL and not self.HI_HAT_PEDAL_BOOL:
+			self.SNARE_HIT = self.NO_INSTRUMENT
 
 		self.STYLES = ["samba", "mambo", "bossa_nova", "ballroom", "jazz", "waltz"]
 		self.ALTERNATES = [
@@ -103,6 +121,35 @@ class DrumMachine:
 		fork(play_bg, args=(self.DRUMMER,))
 		sleep(1)
 		while self.CURRENT_BEAT < len(self.BEATS):
+			if self.RIDE_BOOL:
+				self.HI_HAT_CLOSED_BOOL = False
+				self.HI_HAT_OPEN_BOOL = False
+				self.CYMBAL = self.RIDE
+			if self.HI_HAT_CLOSED_BOOL:
+				self.RIDE_BOOL = False
+				self.HI_HAT_OPEN_BOOL = False
+				self.CYMBAL = self.HI_HAT_CLOSED
+			if self.HI_HAT_OPEN_BOOL:
+				self.RIDE_BOOL = False
+				self.HI_HAT_CLOSED_BOOL = False
+				self.CYMBAL = self.HI_HAT_OPEN
+			if not self.RIDE_BOOL and not self.HI_HAT_CLOSED_BOOL and not self.HI_HAT_OPEN_BOOL:
+				self.CYMBAL = self.NO_INSTRUMENT
+			if self.SNARE_BOOL:
+				self.SIDE_STICK_BOOL = False
+				self.HI_HAT_PEDAL_BOOL = False
+				self.SNARE_HIT = self.SNARE
+			if self.SIDE_STICK_BOOL:
+				self.SNARE_BOOL = False
+				self.HI_HAT_PEDAL_BOOL = False
+				self.SNARE_HIT = self.SIDE_STICK
+			if self.HI_HAT_PEDAL_BOOL:
+				self.SNARE_BOOL = False
+				self.SIDE_STICK_BOOL = False
+				self.SNARE_HIT = self.HI_HAT_PEDAL
+			if not self.SNARE_BOOL and not self.SIDE_STICK_BOOL and not self.HI_HAT_PEDAL_BOOL:
+				self.SNARE_HIT = self.NO_INSTRUMENT
+			
 			drum_pattern(self.CYMBAL, self.SNARE_HIT, self.STYLES[self.CURRENT_STYLE], self.CURRENT_ALTERNATE, self.BEATS[self.CURRENT_BEAT], self.DRUMMER)
 			self.CURRENT_BEAT += 1
 			if self.CURRENT_BEAT == len(self.BEATS):
@@ -165,10 +212,10 @@ class DrumGUI(CTk):
 		self.frame_alternates.grid_rowconfigure(5, weight=1)
 		self.frame_alternates.grid_rowconfigure(6, weight=1)
 
-		# self.frame_instruments = CTkFrame(self)
-		# self.frame_instruments.grid(row=3, column=0, padx=20, pady=10, sticky="nsew")
-		# self.frame_instruments.grid_columnconfigure(0, weight=1)
-		# self.frame_instruments.grid_columnconfigure(1, weight=1)
+		self.frame_instruments = CTkFrame(self)
+		self.frame_instruments.grid(row=3, column=0, padx=20, pady=10, sticky="nsew")
+		self.frame_instruments.grid_columnconfigure(0, weight=1)
+		self.frame_instruments.grid_columnconfigure(1, weight=1)
 
 		# title
 		self.title_label = CTkLabel(self.frame_title, text="jazz drummer", font=self.font_bold_large)
@@ -200,6 +247,7 @@ class DrumGUI(CTk):
 				self.style_button_index[style].configure(text_color=drum_machine.TOGGLE_ON_TEXT)
 
 		# instruments
+		
 
 	def on_click(self, value):
 		self.CURRENT_TEMPO = int(self.tempo_slider.get())
