@@ -95,9 +95,17 @@ class DrumMachine:
 		self.SESSION.register_keyboard_listener(on_press=self.keyboard_input, on_release=self.keyboard_output)
 
 
+class DrumGUI(CTk, DrumMachine):
+	def __init__(self):
+		super().__init__()
+		self.title("jazz drummer")
+		self.geometry("500x500")
+		self.protocol("WM_DELETE_WINDOW", self.kill_loop)
+
+
 # --- TESTING AREA --- #
 
-app = DrumMachine()
-app.start_loop()
+def run_gui():
+	pass
 
 # --- TESTING AREA --- #
