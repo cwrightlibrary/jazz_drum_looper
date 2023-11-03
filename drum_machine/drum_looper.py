@@ -21,7 +21,7 @@ class DrumMachine:
 		self.SESSION = Session(tempo=self.TEMPO)
 
 		if name == "posix":
-			self.BRUSH_SOUNDFONT = dirname(abspath(argv[0])) + "/asssets/BrushOrpheus.sf2"
+			self.BRUSH_SOUNDFONT = dirname(abspath(argv[0])) + "/assets/BrushOrpheus.sf2"
 		elif name == "nt":
 			self.BRUSH_SOUNDFONT = dirname(abspath(argv[0])) + "\\assets\\BrushOrpheus.sf2"
 		
@@ -166,17 +166,17 @@ class DrumGUI(CTk):
 	def __init__(self, drum_machine):
 		super().__init__()
 		# fonts
-		self.font_bold_large = CTkFont(family="Noto Sans Black", size=50)
-		self.font_bold_small = CTkFont(family="Noto Sans Black", size=25)
-		self.font_bold_extra_small = CTkFont(family="Noto Sans Black", size=17)
+		self.font_bold_large = CTkFont(family="NotoSans-Black", size=50)
+		self.font_bold_small = CTkFont(family="NotoSans-Black", size=25)
+		self.font_bold_extra_small = CTkFont(family="NotoSans-Black", size=17)
 
-		self.font_regular_large = CTkFont(family="Noto Sans Regular", size=50)
-		self.font_regular_small = CTkFont(family="Noto Sans Regular", size=25)
-		self.font_regular_extra_small = CTkFont(family="Noto Sans Regular", size=17)
+		self.font_regular_large = CTkFont(family="NotoSans-Regular", size=50)
+		self.font_regular_small = CTkFont(family="NotoSans-Regular", size=25)
+		self.font_regular_extra_small = CTkFont(family="NotoSans-Regular", size=17)
 
-		self.font_emoji_large = CTkFont(family="Noto Color Emoji", size=50)
-		self.font_emoji_small = CTkFont(family="Noto Color Emoji", size=25)
-		self.font_emoji_extra_small = CTkFont(family="Noto Color Emoji", size=17)
+		self.font_emoji_large = CTkFont(family="NotoColorEmoji-Regular", size=50)
+		self.font_emoji_small = CTkFont(family="NotoColorEmoji-Regular", size=25)
+		self.font_emoji_extra_small = CTkFont(family="NotoColorEmoji-Regular", size=17)
 
 		# main window layout
 		self.title("jazz drummer")
@@ -201,8 +201,8 @@ class DrumGUI(CTk):
 		self.frame_style.grid_rowconfigure(0, weight=1)
 		self.frame_style.grid_rowconfigure(1, weight=1)
 
-		self.frame_alternates = CTkFrame(self)
-		self.frame_alternates.grid(row=2, column=1, padx=(10, 20), pady=10, sticky="nsew")
+		self.frame_alternates = CTkFrame(self, width=600)
+		self.frame_alternates.grid(row=2, column=1, rowspan=2, padx=(10, 20), pady=10, sticky="nsew")
 		self.frame_alternates.grid_columnconfigure(0, weight=1)
 		self.frame_alternates.grid_rowconfigure(0, weight=1)
 		self.frame_alternates.grid_rowconfigure(1, weight=1)
@@ -211,11 +211,15 @@ class DrumGUI(CTk):
 		self.frame_alternates.grid_rowconfigure(4, weight=1)
 		self.frame_alternates.grid_rowconfigure(5, weight=1)
 		self.frame_alternates.grid_rowconfigure(6, weight=1)
+		self.frame_alternates.grid_rowconfigure(7, weight=1)
 
 		self.frame_instruments = CTkFrame(self)
 		self.frame_instruments.grid(row=3, column=0, padx=20, pady=10, sticky="nsew")
 		self.frame_instruments.grid_columnconfigure(0, weight=1)
 		self.frame_instruments.grid_columnconfigure(1, weight=1)
+		self.frame_instruments.grid_columnconfigure(1, weight=1)
+		self.frame_instruments.grid_rowconfigure(0, weight=1)
+		self.frame_instruments.grid_rowconfigure(1, weight=1)
 
 		# title
 		self.title_label = CTkLabel(self.frame_title, text="jazz drummer", font=self.font_bold_large)
@@ -245,9 +249,31 @@ class DrumGUI(CTk):
 			
 			if style == drum_machine.CURRENT_STYLE:
 				self.style_button_index[style].configure(text_color=drum_machine.TOGGLE_ON_TEXT)
+		
+		self.alternate_width_label = CTkLabel(self.frame_alternates, text="alternate styles", font=self.font_bold_small)
+		self.alternate_width_label.grid(row=0, column=0, padx=20, pady=10, sticky="new")
+		self.alternate_button_index = []
+		self.add_alternates(drum_machine)
 
 		# instruments
-		
+		# yet to add
+		self.ride_button = CTkButton(self.frame_instruments, text="ride", font=self.font_bold_extra_small, fg_color="transparent", text_color=drum_machine.TOGGLE_OFF_TEXT)
+		self.ride_button.grid(row=0, column=0, padx=10, pady=10, sticky="nsew")
+
+		self.hi_hat_closed_button = CTkButton(self.frame_instruments, text="hi-hat closed", font=self.font_bold_extra_small, fg_color="transparent", text_color=drum_machine.TOGGLE_OFF_TEXT)
+		self.hi_hat_closed_button.grid(row=0, column=1, padx=10, pady=10, sticky="nsew")
+
+		self.hi_hat_open_button = CTkButton(self.frame_instruments, text="hi-hat open", font=self.font_bold_extra_small, fg_color="transparent", text_color=drum_machine.TOGGLE_OFF_TEXT)
+		self.hi_hat_open_button.grid(row=0, column=2, padx=10, pady=10, sticky="nsew")
+
+		self.snare_button = CTkButton(self.frame_instruments, text="snare", font=self.font_bold_extra_small, fg_color="transparent", text_color=drum_machine.TOGGLE_OFF_TEXT)
+		self.snare_button.grid(row=1, column=0, padx=10, pady=10, sticky="nsew")
+
+		self.side_stick_button = CTkButton(self.frame_instruments, text="side stick", font=self.font_bold_extra_small, fg_color="transparent", text_color=drum_machine.TOGGLE_OFF_TEXT)
+		self.side_stick_button.grid(row=1, column=1, padx=10, pady=10, sticky="nsew")
+
+		self.hi_hat_pedal_button = CTkButton(self.frame_instruments, text="hi-hat pedal", font=self.font_bold_extra_small, fg_color="transparent", text_color=drum_machine.TOGGLE_OFF_TEXT)
+		self.hi_hat_pedal_button.grid(row=1, column=2, padx=10, pady=10, sticky="nsew")
 
 	def on_click(self, value):
 		self.CURRENT_TEMPO = int(self.tempo_slider.get())
@@ -265,6 +291,30 @@ class DrumGUI(CTk):
 				self.style_button_index[s].configure(text_color=drum_machine.TOGGLE_ON_TEXT)
 			else:
 				self.style_button_index[s].configure(text_color=drum_machine.TOGGLE_OFF_TEXT)
+		self.add_alternates(drum_machine)
+	
+	def add_alternates(self, drum_machine):
+		if len(self.alternate_button_index) > 0:
+			for alt in self.alternate_button_index:
+				alt.destroy()
+		self.alternate_button_index = []
+		for alt in range(len(drum_machine.ALTERNATES[drum_machine.CURRENT_STYLE])):
+			self.alt_style = CTkButton(self.frame_alternates, text=drum_machine.ALTERNATES[drum_machine.CURRENT_STYLE][alt], font=self.font_bold_extra_small, fg_color="transparent", text_color=drum_machine.TOGGLE_OFF_TEXT, command=lambda alt_num=alt:self.select_alternate(drum_machine, alt_num))
+			self.alt_style.grid(row=alt + 1, column=0, padx=5, pady=2, sticky="nsew")
+			self.alternate_button_index.append(self.alt_style)
+			
+			if alt == drum_machine.CURRENT_ALTERNATE:
+				self.alternate_button_index[alt].configure(text_color=drum_machine.TOGGLE_ON_TEXT)
+			if len(drum_machine.ALTERNATES[drum_machine.CURRENT_STYLE]) == 1:
+				self.alternate_button_index[0].configure(state="disabled")
+	
+	def select_alternate(self, drum_machine, alt_num):
+		drum_machine.CURRENT_STYLE = alt_num
+		for a in range(len(self.alternate_button_index)):
+			if a == alt_num:
+				self.alternate_button_index[a].configure(text_color=drum_machine.TOGGLE_ON_TEXT)
+			else:
+				self.alternate_button_index[a].configure(text_color=drum_machine.TOGGLE_OFF_TEXT)
 
 
 def start_drum_machine():
@@ -275,8 +325,8 @@ def start_drum_machine():
 		app.protocol("WM_DELETE_WINDOW", looper.kill_loop)
 		app.mainloop()
 
-	fork_unsynchronized(run_gui)
-	looper.start_loop()
+	fork_unsynchronized(looper.start_loop)
+	run_gui()
 
 
 start_drum_machine()
