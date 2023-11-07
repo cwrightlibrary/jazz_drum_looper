@@ -125,33 +125,17 @@ class DrumMachine:
 		sleep(1)
 		while self.CURRENT_BEAT < len(self.BEATS):
 			if self.RIDE_BOOL:
-				self.HI_HAT_CLOSED_BOOL = False
-				self.HI_HAT_OPEN_BOOL = False
 				self.CYMBAL = self.RIDE
-			if self.HI_HAT_CLOSED_BOOL:
-				self.RIDE_BOOL = False
-				self.HI_HAT_OPEN_BOOL = False
+			elif self.HI_HAT_CLOSED_BOOL:
 				self.CYMBAL = self.HI_HAT_CLOSED
-			if self.HI_HAT_OPEN_BOOL:
-				self.RIDE_BOOL = False
-				self.HI_HAT_CLOSED_BOOL = False
+			elif self.HI_HAT_OPEN_BOOL:
 				self.CYMBAL = self.HI_HAT_OPEN
-			if not self.RIDE_BOOL and not self.HI_HAT_CLOSED_BOOL and not self.HI_HAT_OPEN_BOOL:
-				self.CYMBAL = self.NO_INSTRUMENT
 			if self.SNARE_BOOL:
-				self.SIDE_STICK_BOOL = False
-				self.HI_HAT_PEDAL_BOOL = False
 				self.SNARE_HIT = self.SNARE
-			if self.SIDE_STICK_BOOL:
-				self.SNARE_BOOL = False
-				self.HI_HAT_PEDAL_BOOL = False
+			elif self.SIDE_STICK_BOOL:
 				self.SNARE_HIT = self.SIDE_STICK
-			if self.HI_HAT_PEDAL_BOOL:
-				self.SNARE_BOOL = False
-				self.SIDE_STICK_BOOL = False
+			elif self.HI_HAT_PEDAL_BOOL:
 				self.SNARE_HIT = self.HI_HAT_PEDAL
-			if not self.SNARE_BOOL and not self.SIDE_STICK_BOOL and not self.HI_HAT_PEDAL_BOOL:
-				self.SNARE_HIT = self.NO_INSTRUMENT
 			
 			drum_pattern(self.CYMBAL, self.SNARE_HIT, self.STYLES[self.CURRENT_STYLE], self.CURRENT_ALTERNATE, self.BEATS[self.CURRENT_BEAT], self.DRUMMER)
 			self.CURRENT_BEAT += 1
@@ -329,12 +313,61 @@ class DrumGUI(CTk):
 				self.alternate_button_index[a].configure(text_color=drum_machine.TOGGLE_OFF_TEXT)
 	
 	def select_instrument(self, drum_machine, instrument_index):
-		drum_machine.INSTRUMENT_BOOLS_INDEX[instrument_index] = not drum_machine.INSTRUMENT_BOOLS_INDEX[instrument_index]
-		for i in range(len(self.instrument_buttons_index)):
-			if drum_machine.INSTRUMENT_BOOLS_INDEX[i]:
-				self.instrument_buttons_index[i].configure(text_color=drum_machine.TOGGLE_ON_TEXT)
-			else:
-				self.instrument_buttons_index[i].configure(text_color=drum_machine.TOGGLE_OFF_TEXT)
+		if instrument_index == 0:
+			self.instrument_buttons_index[0].configure(text_color=drum_machine.TOGGLE_ON_TEXT)
+			self.instrument_buttons_index[1].configure(text_color=drum_machine.TOGGLE_OFF_TEXT)
+			self.instrument_buttons_index[2].configure(text_color=drum_machine.TOGGLE_OFF_TEXT)
+		elif instrument_index == 1:
+			self.instrument_buttons_index[0].configure(text_color=drum_machine.TOGGLE_OFF_TEXT)
+			self.instrument_buttons_index[1].configure(text_color=drum_machine.TOGGLE_ON_TEXT)
+			self.instrument_buttons_index[2].configure(text_color=drum_machine.TOGGLE_OFF_TEXT)
+		elif instrument_index == 2:
+			self.instrument_buttons_index[0].configure(text_color=drum_machine.TOGGLE_OFF_TEXT)
+			self.instrument_buttons_index[1].configure(text_color=drum_machine.TOGGLE_OFF_TEXT)
+			self.instrument_buttons_index[2].configure(text_color=drum_machine.TOGGLE_ON_TEXT)
+		if instrument_index == 3:
+			self.instrument_buttons_index[3].configure(text_color=drum_machine.TOGGLE_ON_TEXT)
+			self.instrument_buttons_index[4].configure(text_color=drum_machine.TOGGLE_OFF_TEXT)
+			self.instrument_buttons_index[5].configure(text_color=drum_machine.TOGGLE_OFF_TEXT)
+		elif instrument_index == 4:
+			self.instrument_buttons_index[3].configure(text_color=drum_machine.TOGGLE_OFF_TEXT)
+			self.instrument_buttons_index[4].configure(text_color=drum_machine.TOGGLE_ON_TEXT)
+			self.instrument_buttons_index[5].configure(text_color=drum_machine.TOGGLE_OFF_TEXT)
+		elif instrument_index == 5:
+			self.instrument_buttons_index[3].configure(text_color=drum_machine.TOGGLE_OFF_TEXT)
+			self.instrument_buttons_index[4].configure(text_color=drum_machine.TOGGLE_OFF_TEXT)
+			self.instrument_buttons_index[5].configure(text_color=drum_machine.TOGGLE_ON_TEXT)
+		
+		if instrument_index == 0:
+			drum_machine.RIDE_BOOL = True
+			drum_machine.HI_HAT_CLOSED_BOOL = False
+			drum_machine.HI_HAT_OPEN_BOOL = False
+			drum_machine.CYMBAL = drum_machine.RIDE
+		elif instrument_index == 1:
+			drum_machine.RIDE_BOOL = False
+			drum_machine.HI_HAT_CLOSED_BOOL = True
+			drum_machine.HI_HAT_OPEN_BOOL = False
+			drum_machine.CYMBAL = drum_machine.HI_HAT_OPEN
+		elif instrument_index == 2:
+			drum_machine.RIDE_BOOL = False
+			drum_machine.HI_HAT_CLOSED_BOOL = False
+			drum_machine.HI_HAT_OPEN_BOOL = True
+			drum_machine.CYMBAL = drum_machine.HI_HAT_CLOSED
+		if instrument_index == 3:
+			drum_machine.SNARE_BOOL = True
+			drum_machine.SIDE_STICK_BOOL = False
+			drum_machine.HI_HAT_PEDAL_BOOL = False
+			drum_machine.SNARE_HIT = drum_machine.SNARE
+		elif instrument_index == 4:
+			drum_machine.SNARE_BOOL = False
+			drum_machine.SIDE_STICK_BOOL = True
+			drum_machine.HI_HAT_PEDAL_BOOL = False
+			drum_machine.SNARE_HIT = drum_machine.SIDE_STICK
+		if instrument_index == 5:
+			drum_machine.SNARE_BOOL = False
+			drum_machine.SIDE_STICK_BOOL = False
+			drum_machine.HI_HAT_PEDAL_BOOL = True
+			drum_machine.SNARE_HIT = drum_machine.HI_HAT_PEDAL
 
 
 def start_drum_machine():
