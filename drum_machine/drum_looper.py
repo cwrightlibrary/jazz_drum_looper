@@ -42,7 +42,7 @@ class DrumMachine:
 		self.RIDE = ride_cymbal_1
 		self.HI_HAT_CLOSED = closed_hi_hat
 		self.HI_HAT_OPEN = open_hi_hat
-		self.SNARE = acoustic_snare
+		self.SNARE = tap_snare
 		self.SIDE_STICK = side_stick
 		self.HI_HAT_PEDAL = pedal_hi_hat
 		self.NO_INSTRUMENT = None

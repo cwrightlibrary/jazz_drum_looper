@@ -1,3 +1,4 @@
+tap_snare = 27
 acoustic_drum = 35
 bass_drum_1 = 36
 side_stick = 37
