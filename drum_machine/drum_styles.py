@@ -3,9 +3,24 @@ from note_durations import *
 
 def playnote(drum_note, length, drummer):
 	if len(drum_note) == 1 or (len(drum_note) == 2 and None in drum_note):
-		drummer.play_note(drum_note[0], 1, length)
+		if len(drum_note) == 1 and drum_note[0] == None:
+			drummer.play_note(electric_snare, 0, length, silent=True)
+		else:
+			drummer.play_note(drum_note[0], 1, length)
 	elif len(drum_note) > 1:
-		drummer.play_chord(drum_note, 1, length)
+		if None in drum_note:
+			temp_notes = []
+			for n in drum_note:
+				if n != None:
+					temp_notes.append(n)
+			if len(temp_notes) == 0:
+				drummer.play_note(electric_snare, 0, length, silent=True)
+			elif len(temp_notes) > 1:
+				drummer.play_chord(temp_notes, 1, length)
+			else:
+				drummer.play_note(temp_notes[0], 1, length)
+		else:
+			drummer.play_chord(drum_note, 1, length)
 
 
 def play_bg(drummer):
