@@ -18,7 +18,7 @@ class DrumMachine:
 		self.TEMPO = 100
 		self.NEW_TEMPO = self.TEMPO
 
-		self.SESSION = Session(tempo=self.TEMPO)
+		self.SESSION = Session(tempo=self.TEMPO).run_as_server()
 
 		if name == "posix":
 			self.BRUSH_SOUNDFONT = dirname(abspath(argv[0])) + "/assets/BrushOrpheus.sf2"
@@ -420,8 +420,8 @@ def start_drum_machine():
 		app.protocol("WM_DELETE_WINDOW", looper.kill_loop)
 		app.mainloop()
 
-	fork_unsynchronized(run_gui)
-	looper.start_loop()
+	looper.SESSION.fork(looper.start_loop)
+	run_gui()
 
 
 start_drum_machine()
