@@ -1,7 +1,7 @@
 from customtkinter import *
 from PIL import Image
 from os.path import join, dirname, realpath
-
+from darkdetect import isDark
 
 class App(CTk):
 	def __init__(self):
@@ -9,14 +9,14 @@ class App(CTk):
 		self.title("gui_testing.py")
 		self.geometry("500x500")
 
-		# self._set_appearance_mode("dark")
-
 		assets_dir = join(dirname(realpath(__file__)), "assets")
 		drumset_dark_dir = join(assets_dir, "drumset_dark")
 		drumset_light_dir = join(assets_dir, "drumset_light")
 		
-		# dark_or_light_dir = drumset_dark_dir
-		dark_or_light_dir = drumset_light_dir
+		if isDark:
+			dark_or_light_dir = drumset_dark_dir
+		else:
+			dark_or_light_dir = drumset_light_dir
 		
 		self.bassf_image = CTkImage(Image.open(join(dark_or_light_dir, "bassf.png")), size=(254, 254))
 		self.basst_image = CTkImage(Image.open(join(dark_or_light_dir, "basst.png")), size=(254, 254))

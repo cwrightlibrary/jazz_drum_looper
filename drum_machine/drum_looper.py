@@ -4,7 +4,7 @@ from time import sleep
 from pyautogui import *
 from darkdetect import isDark
 from os import name
-from os.path import dirname, abspath
+from os.path import join, dirname, realpath
 from sys import argv
 from drum_styles import *
 from midi_mapping import *
@@ -20,10 +20,8 @@ class DrumMachine:
 
 		self.SESSION = Session(tempo=self.TEMPO).run_as_server()
 
-		if name == "posix":
-			self.BRUSH_SOUNDFONT = dirname(abspath(argv[0])) + "/assets/BrushOrpheus.sf2"
-		elif name == "nt":
-			self.BRUSH_SOUNDFONT = dirname(abspath(argv[0])) + "\\assets\\BrushOrpheus.sf2"
+		assets_dir = join(dirname(realpath(__file__)), "assets")
+		self.BRUSH_SOUNDFONT = join(assets_dir, "BrushOrpheus.sf2")
 		
 		self.DRUMMER = self.SESSION.new_part("Brush", soundfont=self.BRUSH_SOUNDFONT)
 
@@ -153,25 +151,17 @@ class DrumGUI(CTk):
 	def __init__(self, drum_machine):
 		super().__init__()
 		# fonts
-		if name == "posix":
-			font_name_bold = "NotoSans-Black"
-			font_name_reg = "NotoSans-Regular"
-			font_name_emoji = "NotoColorEmoji-Regular"
-		elif name == "nt":
-			font_name_bold = "Noto Sans Black"
-			font_name_reg = "Noto Sans Regular"
-			font_name_emoji = "Noto ColorEmoji Regular"
-		self.font_bold_large = CTkFont(family=font_name_bold, size=50)
-		self.font_bold_small = CTkFont(family=font_name_bold, size=25)
-		self.font_bold_extra_small = CTkFont(family=font_name_bold, size=17)
+		self.font_bold_large = CTkFont(size=50)
+		self.font_bold_small = CTkFont(size=25)
+		self.font_bold_extra_small = CTkFont(size=17)
 
-		self.font_regular_large = CTkFont(family=font_name_reg, size=50)
-		self.font_regular_small = CTkFont(family=font_name_reg, size=25)
-		self.font_regular_extra_small = CTkFont(family=font_name_reg, size=17)
+		self.font_regular_large = CTkFont(size=50)
+		self.font_regular_small = CTkFont(size=25)
+		self.font_regular_extra_small = CTkFont(size=17)
 
-		self.font_emoji_large = CTkFont(family=font_name_emoji, size=50)
-		self.font_emoji_small = CTkFont(family=font_name_emoji, size=25)
-		self.font_emoji_extra_small = CTkFont(family=font_name_emoji, size=17)
+		self.font_emoji_large = CTkFont(size=50)
+		self.font_emoji_small = CTkFont(size=25)
+		self.font_emoji_extra_small = CTkFont(size=17)
 
 		# main window layout
 		self.title("jazz drummer")
@@ -180,9 +170,10 @@ class DrumGUI(CTk):
 		self.grid_rowconfigure((0, 1, 2, 3, 4, 5), weight=1)
 
 		# frames
-		self.frame_title = CTkFrame(self)
-		self.frame_title.grid(row=0, column=0, columnspan=2, padx=20, pady=(0, 5), sticky="new")
+		self.frame_title = CTkFrame(self, corner_radius=0)
+		self.frame_title.grid(row=0, column=0, columnspan=2, padx=0, pady=(0, 5), sticky="nsew")
 		self.frame_title.grid_columnconfigure(0, weight=1)
+		self.frame_title.grid_rowconfigure(0, weight=1)
 
 		self.frame_tempo = CTkFrame(self)
 		self.frame_tempo.grid(row=1, column=0, columnspan=2, padx=20, pady=10, sticky="nsew")
