@@ -151,9 +151,9 @@ class DrumGUI(CTk):
 	def __init__(self, drum_machine):
 		super().__init__()
 		# fonts
-		self.font_bold_large = CTkFont(size=50)
-		self.font_bold_small = CTkFont(size=25)
-		self.font_bold_extra_small = CTkFont(size=17)
+		self.font_bold_large = CTkFont(size=50, weight="bold")
+		self.font_bold_small = CTkFont(size=25, weight="bold")
+		self.font_bold_extra_small = CTkFont(size=17, weight="bold")
 
 		self.font_regular_large = CTkFont(size=50)
 		self.font_regular_small = CTkFont(size=25)
@@ -167,7 +167,7 @@ class DrumGUI(CTk):
 		self.title("jazz drummer")
 		self.geometry("800x600")
 		self.grid_columnconfigure(0, weight=1)
-		self.grid_rowconfigure((0, 1, 2, 3, 4, 5), weight=1)
+		self.grid_rowconfigure((0, 1, 2, 3, 4), weight=1)
 
 		# frames
 		self.frame_title = CTkFrame(self, corner_radius=0)
@@ -261,6 +261,23 @@ class DrumGUI(CTk):
 		self.hi_hat_pedal_button.grid(row=1, column=2, padx=10, pady=10, sticky="nsew")
 
 		self.instrument_buttons_index = [self.ride_button, self.hi_hat_closed_button, self.hi_hat_open_button, self.snare_button, self.side_stick_button, self.hi_hat_pedal_button]
+
+		self.current_beat = 0
+		self.frame_beat = CTkFrame(self)
+		self.frame_beat.grid_columnconfigure((0, 1, 2, 3), weight=1)
+		self.frame_beat.grid_rowconfigure(0, weight=1)
+		self.frame_beat.grid(row=4, column=0, columnspan=2, padx=20, pady=(5, 10), sticky="nsew")
+
+		self.beat_number_1 = CTkLabel(self.frame_beat, text="1", font=self.font_bold_large)
+		self.beat_number_1.grid(row=0, column=0, padx=10, pady=10)
+		self.beat_number_2 = CTkLabel(self.frame_beat, text="2", font=self.font_bold_large)
+		self.beat_number_2.grid(row=0, column=1, padx=10, pady=10)
+		self.beat_number_3 = CTkLabel(self.frame_beat, text="3", font=self.font_bold_large)
+		self.beat_number_3.grid(row=0, column=2, padx=10, pady=10)
+		self.beat_number_4 = CTkLabel(self.frame_beat, text="4", font=self.font_bold_large)
+		self.beat_number_4.grid(row=0, column=3, padx=10, pady=10)
+
+
 
 	def on_click(self, value):
 		self.CURRENT_TEMPO = int(self.tempo_slider.get())
@@ -409,6 +426,34 @@ def start_drum_machine():
 	def run_gui():
 		app = DrumGUI(looper)
 		app.protocol("WM_DELETE_WINDOW", looper.kill_loop)
+
+		def print_after():
+			if app.current_beat != looper.CURRENT_BEAT:
+				if app.current_beat == -1:
+					app.beat_number_1.configure(text_color="gray10")
+					app.beat_number_2.configure(text_color="gray74")
+					app.beat_number_3.configure(text_color="gray74")
+					app.beat_number_4.configure(text_color="gray74")
+				elif app.current_beat == 0:
+					app.beat_number_1.configure(text_color="gray74")
+					app.beat_number_2.configure(text_color="gray10")
+					app.beat_number_3.configure(text_color="gray74")
+					app.beat_number_4.configure(text_color="gray74")
+				elif app.current_beat == 1:
+					app.beat_number_1.configure(text_color="gray74")
+					app.beat_number_2.configure(text_color="gray74")
+					app.beat_number_3.configure(text_color="gray10")
+					app.beat_number_4.configure(text_color="gray74")
+				elif app.current_beat == 2:
+					app.beat_number_1.configure(text_color="gray74")
+					app.beat_number_2.configure(text_color="gray74")
+					app.beat_number_3.configure(text_color="gray74")
+					app.beat_number_4.configure(text_color="gray10")
+				app.current_beat = looper.CURRENT_BEAT - 1
+			
+			app.after(50, print_after)
+		
+		app.after(50, print_after)
 		app.mainloop()
 
 	looper.SESSION.fork(looper.start_loop)
