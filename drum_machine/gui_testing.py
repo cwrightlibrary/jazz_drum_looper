@@ -1,56 +1,46 @@
 from customtkinter import *
-from PIL import Image
-from os.path import join, dirname, realpath
-from darkdetect import isDark
 
 class App(CTk):
 	def __init__(self):
 		super().__init__()
-		self.title("gui_testing.py")
-		self.geometry("500x500")
+		# main configuration
+		self.title("drummer")
+		self.geometry("800x600")
+		self.grid_rowconfigure(0, weight=1)
+		self.grid_columnconfigure(0, weight=0)
+		self.grid_columnconfigure(1, weight=0)
 
-		assets_dir = join(dirname(realpath(__file__)), "assets")
-		drumset_dark_dir = join(assets_dir, "drumset_dark")
-		drumset_light_dir = join(assets_dir, "drumset_light")
-		
-		if isDark:
-			dark_or_light_dir = drumset_dark_dir
-		else:
-			dark_or_light_dir = drumset_light_dir
-		
-		self.bassf_image = CTkImage(Image.open(join(dark_or_light_dir, "bassf.png")), size=(254, 254))
-		self.basst_image = CTkImage(Image.open(join(dark_or_light_dir, "basst.png")), size=(254, 254))
-		self.bassfh_image = CTkImage(Image.open(join(dark_or_light_dir, "bassfh.png")), size=(254, 254))
-		self.bassth_image = CTkImage(Image.open(join(dark_or_light_dir, "bassth.png")), size=(254, 254))
-			
-		self.bass_drum_frame = CTkFrame(self, corner_radius=0)
-		self.bass_drum_frame.pack()
+		# fonts
+		self.font_h1 = CTkFont(size=30, weight="bold")
+		self.font_h2 = CTkFont(size=21, weight="bold")
+		self.font_p = CTkFont(size=16)
 
-		self.bass_drum_bool = False
+		# frames
+		self.sidebar_frame = CTkFrame(self, corner_radius=0)
+		self.sidebar_frame.grid(row=0, column=0, padx=(0, 20), pady=0, sticky="nsew")
+		self.sidebar_frame.grid_rowconfigure(0, weight=0)
+		self.sidebar_frame.grid_columnconfigure(0, weight=1)
 
-		self.bass_drum_button = CTkButton(self.bass_drum_frame, text="", image=self.bassf_image, hover=False, fg_color=("gray92", "grey14"), corner_radius=0, command=self.bass_drum_switch)
-		self.bass_drum_button.pack()
-		self.bass_drum_button.bind("<Enter>", self.on_enter)
-		self.bass_drum_button.bind("<Leave>", self.on_leave)
+		self.tabview_frame = CTkFrame(self)
+		self.tabview_frame.grid(row=0, column=1, padx=20, pady=20, sticky="nsew")
+		self.tabview_frame.grid_rowconfigure(0, weight=1)
+		self.tabview_frame.grid_columnconfigure(0, weight=1)
 
-	def bass_drum_switch(self):
-		self.bass_drum_bool = not self.bass_drum_bool
-		if self.bass_drum_bool:
-			self.bass_drum_button.configure(image=self.bassth_image)
-		else:
-			self.bass_drum_button.configure(image=self.bassfh_image)
-	
-	def on_enter(self, n):
-		if self.bass_drum_bool:
-			self.bass_drum_button.configure(image=self.bassth_image)
-		else:
-			self.bass_drum_button.configure(image=self.bassfh_image)
-	
-	def on_leave(self, n):
-		if self.bass_drum_bool:
-			self.bass_drum_button.configure(image=self.basst_image)
-		else:
-			self.bass_drum_button.configure(image=self.bassf_image)
+		# sidebar
+		self.sidebar_title = CTkLabel(self.sidebar_frame, text="drummer", font=self.font_h1)
+		self.sidebar_title.grid(row=0, column=0, padx=40, pady=20)
+
+		# tabview
+		self.tabview = CTkTabview(self.tabview_frame)
+		self.tabview.grid(row=0, column=0, padx=20, pady=20, sticky="nsew")
+		self.tabview.add("jazz")
+		self.tabview.add("bossa nova")
+		self.tabview.set("jazz")
+
+		# jazz
+		self.jazz_bass = CTkButton(self.tabview.tab("jazz"), text="bass")
+		self.jazz_bass.grid(row=0, column=0, padx=10, pady=10)
+
 
 app = App()
 app.mainloop()
